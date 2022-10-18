@@ -120,6 +120,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="color1.cpp" />
     <ClCompile Include="Dificil.cpp" />
     <ClCompile Include="Facil.cpp" />
     <ClCompile Include="Medio.cpp" />
@@ -127,6 +128,7 @@
     <ClCompile Include="MyForm1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="color1.h" />
     <ClInclude Include="Dificil.h">
       <FileType>CppForm</FileType>
     </ClInclude>

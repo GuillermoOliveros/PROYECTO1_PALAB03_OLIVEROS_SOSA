@@ -17,6 +17,7 @@ namespace COLORMANIAPALAB03PR1 {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::IO;
 
 	/// <summary>
 	/// Resumen de MyForm
@@ -222,8 +223,8 @@ namespace COLORMANIAPALAB03PR1 {
 			this->PanelContenedor->Tag = FormHijo;
 			FormHijo->Show();
 		}
-
 #pragma endregion
+
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void btnFacil_Click(System::Object^ sender, System::EventArgs^ e) {
