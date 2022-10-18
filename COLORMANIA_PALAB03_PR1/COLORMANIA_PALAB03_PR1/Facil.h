@@ -140,7 +140,7 @@ namespace COLORMANIAPALAB03PR1 {
 					array<String^>^ Arreglopos = lineOfText->Split(separador);
 
 					color1^ unaPosicion = gcnew color1();
-					unaPosicion->archivoTxt = Arreglopos[0];
+					unaPosicion->archivoTxt = Arreglopos[colorCont];
 					posicionesArreglo[colorCont] = unaPosicion;
 					colorCont++;
 				}
