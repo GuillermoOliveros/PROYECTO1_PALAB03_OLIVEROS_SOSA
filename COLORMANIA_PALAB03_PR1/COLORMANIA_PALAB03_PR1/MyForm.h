@@ -220,7 +220,7 @@ namespace COLORMANIAPALAB03PR1 {
 			FormHijo->Dock = DockStyle::Fill;
 			this->PanelContenedor->Controls->Add(FormHijo);
 			this->PanelContenedor->Tag = FormHijo;
-			FormHio->Show();
+			FormHijo->Show();
 		}
 
 #pragma endregion

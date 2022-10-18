@@ -8,16 +8,5 @@ struct Color
 	Color* siguiente;
 };
 
-void AgregarColor(Color*& pila, int n)
-{
 
-}
-
-Color
-{
-private:
-	int color;
-public:
-
-};
 
