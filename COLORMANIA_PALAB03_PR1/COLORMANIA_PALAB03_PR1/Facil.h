@@ -28,6 +28,7 @@ namespace COLORMANIAPALAB03PR1 {
 			//
 			
 		}
+		array<String^>^ Arreglopos;
 
 	protected:
 		/// <summary>
@@ -45,7 +46,8 @@ namespace COLORMANIAPALAB03PR1 {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
-	private: System::Windows::Forms::ListBox^ listBox1;
+	private: System::Windows::Forms::ListBox^ listBoxPrueba;
+
 
 	private:
 		/// <summary>
@@ -64,7 +66,7 @@ namespace COLORMANIAPALAB03PR1 {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
-			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->listBoxPrueba = (gcnew System::Windows::Forms::ListBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -101,21 +103,21 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			this->openFileDialog1->FileName = L"openFileDialog1";
 			// 
-			// listBox1
+			// listBoxPrueba
 			// 
-			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 16;
-			this->listBox1->Location = System::Drawing::Point(23, 202);
-			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(120, 84);
-			this->listBox1->TabIndex = 3;
+			this->listBoxPrueba->FormattingEnabled = true;
+			this->listBoxPrueba->ItemHeight = 16;
+			this->listBoxPrueba->Location = System::Drawing::Point(23, 202);
+			this->listBoxPrueba->Name = L"listBoxPrueba";
+			this->listBoxPrueba->Size = System::Drawing::Size(120, 84);
+			this->listBoxPrueba->TabIndex = 3;
 			// 
 			// Facil
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(685, 374);
-			this->Controls->Add(this->listBox1);
+			this->Controls->Add(this->listBoxPrueba);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
@@ -133,25 +135,19 @@ namespace COLORMANIAPALAB03PR1 {
 			StreamReader^ InputStream = gcnew StreamReader(openFileDialog1->FileName);
 			
 			if (InputStream != nullptr) {
-				posicionesArreglo = gcnew array<color1^>(100);
-				int colorCont = 0;
+				
 				while (String^ lineOfText = InputStream->ReadLine()) {
 					char separador = ',';
-					array<String^>^ Arreglopos = lineOfText->Split(separador);
-
-					color1^ unaPosicion = gcnew color1();
-					unaPosicion->archivoTxt = Arreglopos[colorCont];
-					posicionesArreglo[colorCont] = unaPosicion;
-					colorCont++;
+					Arreglopos = lineOfText->Split(separador);
+					for (int i = 0; i < Arreglopos->Length; i++) {
+						MessageBox::Show(Arreglopos[i]);
+						listBoxPrueba->Items->Add(Arreglopos[i]);
+					}
+					
 				}
 				InputStream->Close();
-				for (int i; i < posicionesArreglo->Length; i++) {
-					if (posicionesArreglo[i]) {
-
-						listBox1->Items->Add(posicionesArreglo[i]->archivoTxt);
-
-					}
-				}
+				
+				
 
 
 
