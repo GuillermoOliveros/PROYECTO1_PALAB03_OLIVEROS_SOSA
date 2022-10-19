@@ -2,6 +2,7 @@
 #include "color1.h"
 #include <string.h>
 #include <string>
+#include <iostream>
 
 namespace COLORMANIAPALAB03PR1 {
 
@@ -18,7 +19,7 @@ namespace COLORMANIAPALAB03PR1 {
 	/// </summary>
 	public ref class Facil : public System::Windows::Forms::Form
 	{
-		array<color1^>^ posicionesArreglo;
+		
 	public:
 		Facil(void)
 		{
@@ -29,6 +30,7 @@ namespace COLORMANIAPALAB03PR1 {
 			
 		}
 		array<String^>^ Arreglopos;
+		
 
 	protected:
 		/// <summary>
@@ -152,6 +154,7 @@ namespace COLORMANIAPALAB03PR1 {
 
 
 			}
+
 		}
 	}
 	};
