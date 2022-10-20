@@ -42,6 +42,7 @@ namespace COLORMANIAPALAB03PR1 {
 	public:
 		static array<String^>^ Arreglopos;
 		
+		
 
 	protected:
 		/// <summary>
@@ -227,6 +228,7 @@ namespace COLORMANIAPALAB03PR1 {
 			this->PanelCronometro->Tag = FormHijo;
 			FormHijo->Show();
 		}
+		
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (System::Windows::Forms::DialogResult::OK == openFileDialog1->ShowDialog()) {
@@ -240,22 +242,49 @@ namespace COLORMANIAPALAB03PR1 {
 					for (int i = 0; i < Arreglopos->Length; i++) {
 						MessageBox::Show(Arreglopos[i]);
 						listBoxPrueba->Items->Add(Arreglopos[i]);
+						
 					}
 					
 				}
 				InputStream->Close();
 				
 				
-
+				
 
 
 			}
 			
+			
 
 		}
+		
 	}
  private: System::Void btnEmpeza_Click_1(System::Object^ sender, System::EventArgs^ e) {
 			   tiempo->Start();
+			   for (int i = 0; i < Arreglopos->Length; i++) {
+				   if (Arreglopos[i] == "R") {
+					   Arreglopos[i] = "1";
+				   }
+				   if (Arreglopos[i] == "V") {
+					   Arreglopos[i] = "2";
+				   }
+				   if (Arreglopos[i] == "M") {
+					   Arreglopos[i] = "3";
+				   }
+				   if (Arreglopos[i] == "A") {
+					   Arreglopos[i] = "4";
+				   }
+				   if (Arreglopos[i] == "X") {
+					   Arreglopos[i] = "0";
+				   }
+			   }
+			   int arregloColores[30];
+			   for (int i = 0; i < Arreglopos->Length; i++) {
+				   arregloColores[i] = Convert::ToInt32(Arreglopos[i]);
+				   MessageBox::Show(Arreglopos[i]);
+				   listBoxPrueba->Items->Add(arregloColores[i]);
+
+			   }
 		   }
 
 
