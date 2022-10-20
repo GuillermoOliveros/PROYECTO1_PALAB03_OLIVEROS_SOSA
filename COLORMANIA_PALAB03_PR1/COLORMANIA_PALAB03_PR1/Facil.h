@@ -37,9 +37,10 @@ namespace COLORMANIAPALAB03PR1 {
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Label^ minutos;
 	private: System::Windows::Forms::Timer^ tiempo;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
 
 	public:
-		array<String^>^ Arreglopos;
+		static array<String^>^ Arreglopos;
 		
 
 	protected:
@@ -53,9 +54,9 @@ namespace COLORMANIAPALAB03PR1 {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
+
 	protected:
-	private: System::Windows::Forms::Label^ label2;
+
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog1;
 	private: System::Windows::Forms::ListBox^ listBoxPrueba;
@@ -77,8 +78,6 @@ namespace COLORMANIAPALAB03PR1 {
 		{
 			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Facil::typeid));
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->openFileDialog1 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->listBoxPrueba = (gcnew System::Windows::Forms::ListBox());
@@ -88,33 +87,17 @@ namespace COLORMANIAPALAB03PR1 {
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->minutos = (gcnew System::Windows::Forms::Label());
 			this->tiempo = (gcnew System::Windows::Forms::Timer(this->components));
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(281, 164);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(35, 13);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"besos";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(271, 130);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(71, 13);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"like your mom";
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(17, 267);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
+			this->button1->Location = System::Drawing::Point(23, 329);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(133, 27);
+			this->button1->Size = System::Drawing::Size(177, 33);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Ingresar archivo de texto ";
 			this->button1->UseVisualStyleBackColor = true;
@@ -127,17 +110,19 @@ namespace COLORMANIAPALAB03PR1 {
 			// listBoxPrueba
 			// 
 			this->listBoxPrueba->FormattingEnabled = true;
-			this->listBoxPrueba->Location = System::Drawing::Point(2, 2);
-			this->listBoxPrueba->Margin = System::Windows::Forms::Padding(2);
+			this->listBoxPrueba->ItemHeight = 16;
+			this->listBoxPrueba->Location = System::Drawing::Point(3, 2);
+			this->listBoxPrueba->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->listBoxPrueba->Name = L"listBoxPrueba";
-			this->listBoxPrueba->Size = System::Drawing::Size(91, 69);
+			this->listBoxPrueba->Size = System::Drawing::Size(120, 84);
 			this->listBoxPrueba->TabIndex = 3;
 			// 
 			// btnEmpeza
 			// 
-			this->btnEmpeza->Location = System::Drawing::Point(155, 269);
+			this->btnEmpeza->Location = System::Drawing::Point(207, 331);
+			this->btnEmpeza->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnEmpeza->Name = L"btnEmpeza";
-			this->btnEmpeza->Size = System::Drawing::Size(166, 23);
+			this->btnEmpeza->Size = System::Drawing::Size(221, 28);
 			this->btnEmpeza->TabIndex = 10;
 			this->btnEmpeza->Text = L"Empieza!";
 			this->btnEmpeza->UseVisualStyleBackColor = true;
@@ -147,31 +132,34 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			this->label3->AutoSize = true;
 			this->label3->BackColor = System::Drawing::Color::Transparent;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Showcard Gothic", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(449, 21);
+			this->label3->Location = System::Drawing::Point(599, 26);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(13, 17);
+			this->label3->Size = System::Drawing::Size(15, 20);
 			this->label3->TabIndex = 9;
 			this->label3->Text = L":";
 			// 
 			// segundos
 			// 
 			this->segundos->AutoSize = true;
-			this->segundos->Font = (gcnew System::Drawing::Font(L"Showcard Gothic", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->segundos->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->segundos->Location = System::Drawing::Point(459, 10);
+			this->segundos->Location = System::Drawing::Point(612, 12);
+			this->segundos->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->segundos->Name = L"segundos";
-			this->segundos->Size = System::Drawing::Size(43, 30);
+			this->segundos->Size = System::Drawing::Size(51, 36);
 			this->segundos->TabIndex = 8;
 			this->segundos->Text = L"00";
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(349, 2);
+			this->pictureBox1->Location = System::Drawing::Point(465, 2);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(57, 55);
+			this->pictureBox1->Size = System::Drawing::Size(76, 68);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 7;
 			this->pictureBox1->TabStop = false;
@@ -179,11 +167,12 @@ namespace COLORMANIAPALAB03PR1 {
 			// minutos
 			// 
 			this->minutos->AutoSize = true;
-			this->minutos->Font = (gcnew System::Drawing::Font(L"Showcard Gothic", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->minutos->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->minutos->Location = System::Drawing::Point(412, 10);
+			this->minutos->Location = System::Drawing::Point(549, 12);
+			this->minutos->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->minutos->Name = L"minutos";
-			this->minutos->Size = System::Drawing::Size(43, 30);
+			this->minutos->Size = System::Drawing::Size(51, 36);
 			this->minutos->TabIndex = 6;
 			this->minutos->Text = L"00";
 			// 
@@ -192,12 +181,23 @@ namespace COLORMANIAPALAB03PR1 {
 			this->tiempo->Interval = 1000;
 			this->tiempo->Tick += gcnew System::EventHandler(this, &Facil::tiempo_Tick_1);
 			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(188, 103);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->RowTemplate->Height = 24;
+			this->dataGridView1->Size = System::Drawing::Size(426, 197);
+			this->dataGridView1->TabIndex = 11;
+			// 
 			// Facil
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::LightGreen;
-			this->ClientSize = System::Drawing::Size(514, 304);
+			this->ClientSize = System::Drawing::Size(685, 374);
+			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->btnEmpeza);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->segundos);
@@ -205,12 +205,12 @@ namespace COLORMANIAPALAB03PR1 {
 			this->Controls->Add(this->minutos);
 			this->Controls->Add(this->listBoxPrueba);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->label2);
-			this->Controls->Add(this->label1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"Facil";
 			this->Text = L"Facil";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -250,6 +250,7 @@ namespace COLORMANIAPALAB03PR1 {
 
 
 			}
+			
 
 		}
 	}
