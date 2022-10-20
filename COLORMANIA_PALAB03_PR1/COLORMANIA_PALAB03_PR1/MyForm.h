@@ -4,6 +4,7 @@
 #include "Dificil.h"
 #include "Medio.h"
 #include "Facil.h"
+#include "CronometroFacil.h"
 
 
 
@@ -188,6 +189,7 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			// PanelContenedor
 			// 
+			this->PanelContenedor->BackColor = System::Drawing::Color::GreenYellow;
 			this->PanelContenedor->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->PanelContenedor->Location = System::Drawing::Point(267, 0);
 			this->PanelContenedor->Name = L"PanelContenedor";
@@ -228,10 +230,8 @@ namespace COLORMANIAPALAB03PR1 {
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void btnFacil_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->AbrirPanel(gcnew COLORMANIAPALAB03PR1::Facil);
+		this->AbrirPanel(gcnew COLORMANIAPALAB03PR1::Facil);	
 	}
-		  
-
 
 private: System::Void PanelContenedor_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }

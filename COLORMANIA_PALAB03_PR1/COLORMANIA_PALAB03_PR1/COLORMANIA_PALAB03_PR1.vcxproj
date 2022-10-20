@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="color1.cpp" />
+    <ClCompile Include="CronometroFacil.cpp" />
     <ClCompile Include="Dificil.cpp" />
     <ClCompile Include="Facil.cpp" />
     <ClCompile Include="Medio.cpp" />
@@ -129,6 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="color1.h" />
+    <ClInclude Include="CronometroFacil.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Dificil.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -146,6 +150,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CronometroFacil.resx">
+      <DependentUpon>CronometroFacil.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dificil.resx">
       <DependentUpon>Dificil.h</DependentUpon>
     </EmbeddedResource>
