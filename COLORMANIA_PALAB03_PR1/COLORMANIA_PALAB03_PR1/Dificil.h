@@ -94,7 +94,7 @@ namespace COLORMANIAPALAB03PR1 {
 			// listBoxPrueba3
 			// 
 			this->listBoxPrueba3->FormattingEnabled = true;
-			this->listBoxPrueba3->Location = System::Drawing::Point(-1, 1);
+			this->listBoxPrueba3->Location = System::Drawing::Point(9, 1);
 			this->listBoxPrueba3->Margin = System::Windows::Forms::Padding(2);
 			this->listBoxPrueba3->Name = L"listBoxPrueba3";
 			this->listBoxPrueba3->Size = System::Drawing::Size(91, 69);
