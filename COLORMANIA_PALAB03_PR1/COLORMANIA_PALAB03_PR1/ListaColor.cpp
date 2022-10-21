@@ -9,13 +9,17 @@ ListaColor::ListaColor()
 	recorrido = 0;
 }
 
+bool ListaColor::ListaVacia() {
+	return recorrido == 0;
+}
+
 void::ListaColor::InsertarAlInicio(int valor)
 {
 	NodoColor* Color = new NodoColor();
 	Color->valor = valor;
 
 
-	if (ListaColor::ListaVacia() == true)
+	if (ListaColor::ListaVacia())
 	{
 		Inicio = Color;
 		Final = Color;
@@ -61,7 +65,7 @@ NodoColor* ListaColor::SacarAlPrincio()
 {
 	NodoColor* aux = Inicio;
 
-	if (ListaColor::ListaVacia() == false)
+	if (ListaVacia() == false)
 	{
 		Inicio = Inicio->next;
 

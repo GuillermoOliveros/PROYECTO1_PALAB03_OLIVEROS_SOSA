@@ -27,7 +27,6 @@ public:
 
 	int TotalDatos();
 	void Clear();
-
 	bool ListaVacia();
 
 
