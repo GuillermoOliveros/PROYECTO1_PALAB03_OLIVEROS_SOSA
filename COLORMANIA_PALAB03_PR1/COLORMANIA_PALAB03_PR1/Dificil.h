@@ -31,6 +31,11 @@ namespace COLORMANIAPALAB03PR1 {
 	private: System::Windows::Forms::Button^ btnEmpeza;
 	private: System::Windows::Forms::Timer^ tiempo;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
+
 		   array<String^>^ Arreglopos3;
 
 	protected:
@@ -75,6 +80,10 @@ namespace COLORMANIAPALAB03PR1 {
 			this->btnEmpeza = (gcnew System::Windows::Forms::Button());
 			this->tiempo = (gcnew System::Windows::Forms::Timer(this->components));
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -98,7 +107,7 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			this->listBoxPrueba3->FormattingEnabled = true;
 			this->listBoxPrueba3->ItemHeight = 16;
-			this->listBoxPrueba3->Location = System::Drawing::Point(12, 1);
+			this->listBoxPrueba3->Location = System::Drawing::Point(538, 126);
 			this->listBoxPrueba3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->listBoxPrueba3->Name = L"listBoxPrueba3";
 			this->listBoxPrueba3->Size = System::Drawing::Size(120, 84);
@@ -133,7 +142,7 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(472, 1);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(76, 68);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -154,10 +163,10 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			// btnEmpeza
 			// 
-			this->btnEmpeza->Location = System::Drawing::Point(195, 329);
-			this->btnEmpeza->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnEmpeza->Location = System::Drawing::Point(195, 322);
+			this->btnEmpeza->Margin = System::Windows::Forms::Padding(4);
 			this->btnEmpeza->Name = L"btnEmpeza";
-			this->btnEmpeza->Size = System::Drawing::Size(221, 28);
+			this->btnEmpeza->Size = System::Drawing::Size(221, 39);
 			this->btnEmpeza->TabIndex = 15;
 			this->btnEmpeza->Text = L"Empieza!";
 			this->btnEmpeza->UseVisualStyleBackColor = true;
@@ -170,13 +179,53 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToDeleteRows = false;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(195, 86);
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
+				this->Column1,
+					this->Column2, this->Column3, this->Column4
+			});
+			this->dataGridView1->Location = System::Drawing::Point(44, 41);
+			this->dataGridView1->MultiSelect = false;
 			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(425, 209);
+			this->dataGridView1->Size = System::Drawing::Size(396, 236);
 			this->dataGridView1->TabIndex = 16;
+			// 
+			// Column1
+			// 
+			this->Column1->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Column1->HeaderText = L"Pila 1";
+			this->Column1->MinimumWidth = 6;
+			this->Column1->Name = L"Column1";
+			this->Column1->ReadOnly = true;
+			// 
+			// Column2
+			// 
+			this->Column2->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Column2->HeaderText = L"Pila 2";
+			this->Column2->MinimumWidth = 6;
+			this->Column2->Name = L"Column2";
+			this->Column2->ReadOnly = true;
+			// 
+			// Column3
+			// 
+			this->Column3->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Column3->HeaderText = L"Pila 3";
+			this->Column3->MinimumWidth = 6;
+			this->Column3->Name = L"Column3";
+			this->Column3->ReadOnly = true;
+			// 
+			// Column4
+			// 
+			this->Column4->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Column4->HeaderText = L"Pila 4";
+			this->Column4->MinimumWidth = 6;
+			this->Column4->Name = L"Column4";
+			this->Column4->ReadOnly = true;
 			// 
 			// Dificil
 			// 
@@ -193,7 +242,7 @@ namespace COLORMANIAPALAB03PR1 {
 			this->Controls->Add(this->listBoxPrueba3);
 			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Dificil";
 			this->Text = L"Dificil";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();

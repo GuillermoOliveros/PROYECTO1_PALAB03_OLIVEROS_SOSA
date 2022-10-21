@@ -30,10 +30,20 @@ namespace COLORMANIAPALAB03PR1 {
 	private: System::Windows::Forms::Label^ minutos;
 	private: System::Windows::Forms::Button^ btnEmpeza;
 	private: System::Windows::Forms::Timer^ tiempo;
-	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridView^ dataGridView2;
+
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
+
 	public:
 		array<String^>^ Arreglopos2;
-
+		array<String^>^ arregloMedio;
+		array<String^>^ arregloMedio2;
+		array<String^>^ arregloMedio3;
+		array<String^>^ arregloMedio4;
+		
 	protected:
 		/// <summary>
 		/// Limpiar los recursos que se estén usando.
@@ -76,9 +86,13 @@ namespace COLORMANIAPALAB03PR1 {
 			this->minutos = (gcnew System::Windows::Forms::Label());
 			this->btnEmpeza = (gcnew System::Windows::Forms::Button());
 			this->tiempo = (gcnew System::Windows::Forms::Timer(this->components));
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// openFileDialog2
@@ -100,7 +114,7 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			this->listBoxPrueba2->FormattingEnabled = true;
 			this->listBoxPrueba2->ItemHeight = 16;
-			this->listBoxPrueba2->Location = System::Drawing::Point(3, 2);
+			this->listBoxPrueba2->Location = System::Drawing::Point(518, 127);
 			this->listBoxPrueba2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->listBoxPrueba2->Name = L"listBoxPrueba2";
 			this->listBoxPrueba2->Size = System::Drawing::Size(120, 84);
@@ -135,7 +149,7 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(464, 2);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(76, 68);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -156,10 +170,10 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			// btnEmpeza
 			// 
-			this->btnEmpeza->Location = System::Drawing::Point(216, 331);
-			this->btnEmpeza->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnEmpeza->Location = System::Drawing::Point(216, 327);
+			this->btnEmpeza->Margin = System::Windows::Forms::Padding(4);
 			this->btnEmpeza->Name = L"btnEmpeza";
-			this->btnEmpeza->Size = System::Drawing::Size(221, 28);
+			this->btnEmpeza->Size = System::Drawing::Size(221, 34);
 			this->btnEmpeza->TabIndex = 14;
 			this->btnEmpeza->Text = L"Empieza!";
 			this->btnEmpeza->UseVisualStyleBackColor = true;
@@ -170,15 +184,55 @@ namespace COLORMANIAPALAB03PR1 {
 			this->tiempo->Interval = 1000;
 			this->tiempo->Tick += gcnew System::EventHandler(this, &Medio::tiempo_Tick);
 			// 
-			// dataGridView1
+			// dataGridView2
 			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(203, 94);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(396, 195);
-			this->dataGridView1->TabIndex = 15;
+			this->dataGridView2->AllowUserToAddRows = false;
+			this->dataGridView2->AllowUserToDeleteRows = false;
+			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
+				this->Column1,
+					this->Column2, this->Column3, this->Column4
+			});
+			this->dataGridView2->Location = System::Drawing::Point(41, 37);
+			this->dataGridView2->MultiSelect = false;
+			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->ReadOnly = true;
+			this->dataGridView2->RowHeadersWidth = 51;
+			this->dataGridView2->RowTemplate->Height = 24;
+			this->dataGridView2->Size = System::Drawing::Size(396, 236);
+			this->dataGridView2->TabIndex = 15;
+			// 
+			// Column1
+			// 
+			this->Column1->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Column1->HeaderText = L"Pila 1";
+			this->Column1->MinimumWidth = 6;
+			this->Column1->Name = L"Column1";
+			this->Column1->ReadOnly = true;
+			// 
+			// Column2
+			// 
+			this->Column2->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Column2->HeaderText = L"Pila 2";
+			this->Column2->MinimumWidth = 6;
+			this->Column2->Name = L"Column2";
+			this->Column2->ReadOnly = true;
+			// 
+			// Column3
+			// 
+			this->Column3->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Column3->HeaderText = L"Pila 3";
+			this->Column3->MinimumWidth = 6;
+			this->Column3->Name = L"Column3";
+			this->Column3->ReadOnly = true;
+			// 
+			// Column4
+			// 
+			this->Column4->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->Column4->HeaderText = L"Pila 4";
+			this->Column4->MinimumWidth = 6;
+			this->Column4->Name = L"Column4";
+			this->Column4->ReadOnly = true;
 			// 
 			// Medio
 			// 
@@ -186,7 +240,7 @@ namespace COLORMANIAPALAB03PR1 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Orange;
 			this->ClientSize = System::Drawing::Size(685, 374);
-			this->Controls->Add(this->dataGridView1);
+			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->btnEmpeza);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->segundos);
@@ -195,12 +249,12 @@ namespace COLORMANIAPALAB03PR1 {
 			this->Controls->Add(this->listBoxPrueba2);
 			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Medio";
 			this->Text = L"Medio";
 			this->Load += gcnew System::EventHandler(this, &Medio::Medio_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -213,24 +267,100 @@ namespace COLORMANIAPALAB03PR1 {
 			if (InputStream != nullptr) {
 
 				while (String^ lineOfText = InputStream->ReadLine()) {
-					char separador = ',';
+					char separador = 'X';
 					Arreglopos2 = lineOfText->Split(separador);
 					for (int i = 0; i < Arreglopos2->Length; i++) {
 						MessageBox::Show(Arreglopos2[i]);
 						listBoxPrueba2->Items->Add(Arreglopos2[i]);
+						arregloMedio = Arreglopos2[0]->Split(',');
+						arregloMedio2 = Arreglopos2[1]->Split(',');
+						arregloMedio3 = Arreglopos2[2]->Split(',');
+						arregloMedio4 = Arreglopos2[3]->Split(',');
 					}
 
 				}
 				InputStream->Close();
 
 
-
+				dataGridView2->Rows->Add(7);
 
 
 			}
 		}
 	}
 	private: System::Void btnEmpeza_Click(System::Object^ sender, System::EventArgs^ e) {
+		for (int i = 0; i < arregloMedio->Length; i++) {
+
+			if (arregloMedio[i]) {
+				if (arregloMedio[i] == "M") {
+					dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Purple;
+				}
+				if (arregloMedio[i] == "V") {
+					dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Green;
+				}
+				if (arregloMedio[i] == "R") {
+					dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Red;
+				}
+				if (arregloMedio[i] == "A") {
+					dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Yellow;
+				}
+			}
+
+		}
+		for (int i = 0; i < arregloMedio2->Length; i++) {
+			MessageBox::Show(arregloMedio2[i]);
+			if (arregloMedio2[i]) {
+
+
+				if (arregloMedio2[i] == "M") {
+					dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Purple;
+				}
+				if (arregloMedio2[i] == "V") {
+					dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Green;
+				}
+				if (arregloMedio2[i] == "R") {
+					dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Red;
+				}
+				if (arregloMedio2[i] == "A") {
+					dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Yellow;
+				}
+			}
+
+		}
+		for (int i = 0; i < arregloMedio3->Length; i++) {
+			if (arregloMedio3[i]) {
+				if (arregloMedio3[i] == "M") {
+					dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Purple;
+				}
+				if (arregloMedio3[i] == "V") {
+					dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Green;
+				}
+				if (arregloMedio3[i] == "R") {
+					dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Red;
+				}
+				if (arregloMedio3[i] == "A") {
+					dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Yellow;
+				}
+			}
+
+		}
+		for (int i = 0; i < arregloMedio4->Length; i++) {
+			if (arregloMedio4[i]) {
+				if (arregloMedio4[i] == "M") {
+					dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Purple;
+				}
+				if (arregloMedio4[i] == "V") {
+					dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Green;
+				}
+				if (arregloMedio4[i] == "R") {
+					dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Red;
+				}
+				if (arregloMedio4[i] == "A") {
+					dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Yellow;
+				}
+			}
+
+		}
 		tiempo->Start();
 	}
 private: System::Void tiempo_Tick(System::Object^ sender, System::EventArgs^ e) {
