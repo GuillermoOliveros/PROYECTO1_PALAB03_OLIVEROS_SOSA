@@ -7,10 +7,7 @@ using namespace System;
 ref class color1
 {
 public:
-	String^ pilaRoja;
-	String^ pilaAmarilla;
-	String^ pilaMorada;
-	String^ pilaVerde;
+	
 
 	
 

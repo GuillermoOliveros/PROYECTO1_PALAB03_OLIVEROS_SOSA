@@ -237,7 +237,7 @@ namespace COLORMANIAPALAB03PR1 {
 			if (InputStream != nullptr) {
 				
 				while (String^ lineOfText = InputStream->ReadLine()) {
-					char separador = ',';
+					char separador = 'X';
 					Arreglopos = lineOfText->Split(separador);
 					for (int i = 0; i < Arreglopos->Length; i++) {
 						MessageBox::Show(Arreglopos[i]);
@@ -285,6 +285,7 @@ namespace COLORMANIAPALAB03PR1 {
 				   listBoxPrueba->Items->Add(arregloColores[i]);
 
 			   }
+			   
 		   }
 
 
