@@ -14,6 +14,7 @@ namespace COLORMANIAPALAB03PR1 {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	using namespace System::IO;
+	
 
 	/// <summary>
 	/// Resumen de Facil
@@ -239,21 +240,18 @@ namespace COLORMANIAPALAB03PR1 {
 				while (String^ lineOfText = InputStream->ReadLine()) {
 					char separador = 'X';
 					Arreglopos = lineOfText->Split(separador);
+					
 					for (int i = 0; i < Arreglopos->Length; i++) {
 						MessageBox::Show(Arreglopos[i]);
 						listBoxPrueba->Items->Add(Arreglopos[i]);
+						
 						
 					}
 					
 				}
 				InputStream->Close();
-				
-				
-				
-
-
 			}
-			
+			StreamReader^ Input = gcnew StreamReader(Arreglopos);
 			
 
 		}
