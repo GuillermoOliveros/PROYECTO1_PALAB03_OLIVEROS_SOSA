@@ -124,9 +124,12 @@
     <ClCompile Include="CronometroFacil.cpp" />
     <ClCompile Include="Dificil.cpp" />
     <ClCompile Include="Facil.cpp" />
+    <ClCompile Include="ListaColor.cpp" />
     <ClCompile Include="Medio.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyForm1.cpp" />
+    <ClCompile Include="NodoColor.cpp" />
+    <ClCompile Include="PilaColor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="color1.h" />
@@ -139,6 +142,7 @@
     <ClInclude Include="Facil.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="ListaColor.h" />
     <ClInclude Include="Medio.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -148,6 +152,8 @@
     <ClInclude Include="MyForm1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="NodoColor.h" />
+    <ClInclude Include="PilaColor.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CronometroFacil.resx">
