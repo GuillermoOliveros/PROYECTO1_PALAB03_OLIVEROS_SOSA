@@ -51,6 +51,10 @@ namespace COLORMANIAPALAB03PR1 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
 	private: System::Windows::Forms::TextBox^ txtFacil;
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::ListBox^ listBox1;
+	private: System::Windows::Forms::Label^ label1;
+
+
 
 
 
@@ -116,6 +120,8 @@ namespace COLORMANIAPALAB03PR1 {
 			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->txtFacil = (gcnew System::Windows::Forms::TextBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -139,7 +145,7 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			this->listBoxPrueba->FormattingEnabled = true;
 			this->listBoxPrueba->ItemHeight = 16;
-			this->listBoxPrueba->Location = System::Drawing::Point(506, 91);
+			this->listBoxPrueba->Location = System::Drawing::Point(555, 66);
 			this->listBoxPrueba->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->listBoxPrueba->Name = L"listBoxPrueba";
 			this->listBoxPrueba->Size = System::Drawing::Size(120, 84);
@@ -276,12 +282,32 @@ namespace COLORMANIAPALAB03PR1 {
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Facil::button2_Click);
 			// 
+			// listBox1
+			// 
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->ItemHeight = 16;
+			this->listBox1->Location = System::Drawing::Point(555, 155);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(120, 84);
+			this->listBox1->TabIndex = 14;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(462, 262);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(165, 16);
+			this->label1->TabIndex = 15;
+			this->label1->Text = L"Cantidad de movimientos: ";
+			// 
 			// Facil
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::LightGreen;
 			this->ClientSize = System::Drawing::Size(685, 374);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->txtFacil);
 			this->Controls->Add(this->dataGridView1);
@@ -439,12 +465,16 @@ private: System::Void tiempo_Tick_1(System::Object^ sender, System::EventArgs^ e
 	}
 
 }
+	   int contador;
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		contador++;
 		char separador = ',';
 		String^ txt;
 		txt = txtFacil->Text;
+		listBox1->Items->Add(txtFacil);
+		label1->Text = "Cantidad de movimientos: " + contador;
 		arregloMovimiento = txt->Split(separador);
-
+		listBox1->Items->Add(txtFacil->Text);
 		for (int i = 0; i < arregloMovimiento->Length; i++) {
 			MessageBox::Show(arregloMovimiento[i]);
 
@@ -491,7 +521,7 @@ private: System::Void tiempo_Tick_1(System::Object^ sender, System::EventArgs^ e
 		catch (IO::IOException^ e) {
 			MessageBox::Show("Datos ingresados no admitidos");
 		}
-	
+		txtFacil->Clear();
 	
 }
 };

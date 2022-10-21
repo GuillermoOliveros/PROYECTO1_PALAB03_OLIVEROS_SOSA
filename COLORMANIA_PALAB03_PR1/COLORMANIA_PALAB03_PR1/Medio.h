@@ -42,9 +42,12 @@ namespace COLORMANIAPALAB03PR1 {
 		array<String^>^ arregloMedio;
 		array<String^>^ arregloMedio2;
 		array<String^>^ arregloMedio3;
+		array<String^>^ arregloMovimiento2;
 	private: System::Windows::Forms::TextBox^ txtMedio;
 	public:
 	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::ListBox^ listBox1;
+	private: System::Windows::Forms::Label^ label1;
 		   array<String^>^ arregloMedio4;
 		
 	protected:
@@ -96,6 +99,8 @@ namespace COLORMANIAPALAB03PR1 {
 			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->txtMedio = (gcnew System::Windows::Forms::TextBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
@@ -119,7 +124,7 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			this->listBoxPrueba2->FormattingEnabled = true;
 			this->listBoxPrueba2->ItemHeight = 16;
-			this->listBoxPrueba2->Location = System::Drawing::Point(518, 127);
+			this->listBoxPrueba2->Location = System::Drawing::Point(542, 76);
 			this->listBoxPrueba2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->listBoxPrueba2->Name = L"listBoxPrueba2";
 			this->listBoxPrueba2->Size = System::Drawing::Size(120, 84);
@@ -254,6 +259,25 @@ namespace COLORMANIAPALAB03PR1 {
 			this->button2->TabIndex = 17;
 			this->button2->Text = L"Ingresar movimiento ";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Medio::button2_Click);
+			// 
+			// listBox1
+			// 
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->ItemHeight = 16;
+			this->listBox1->Location = System::Drawing::Point(542, 165);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(120, 84);
+			this->listBox1->TabIndex = 18;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(461, 270);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(162, 16);
+			this->label1->TabIndex = 19;
+			this->label1->Text = L"Cantidad de movimientos:";
 			// 
 			// Medio
 			// 
@@ -261,6 +285,8 @@ namespace COLORMANIAPALAB03PR1 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Orange;
 			this->ClientSize = System::Drawing::Size(685, 374);
+			this->Controls->Add(this->label1);
+			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->txtMedio);
 			this->Controls->Add(this->dataGridView2);
@@ -408,6 +434,68 @@ private: System::Void tiempo_Tick(System::Object^ sender, System::EventArgs^ e) 
 	}
 }
 private: System::Void Medio_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+	   int contador;
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	contador++;
+	if (contador > 50) {
+		MessageBox::Show("Ha llegado al límite de movimientos, ha perdido");
+		Medio::Close();
+	}
+	char separador = ',';
+	String^ txt;
+	txt = txtMedio->Text;
+	listBox1->Items->Add(txtMedio);
+	label1->Text = "Cantidad de movimientos: " + contador;
+	arregloMovimiento2 = txt->Split(separador);
+	listBox1->Items->Add(txtMedio->Text);
+	for (int i = 0; i < arregloMovimiento2->Length; i++) {
+		MessageBox::Show(arregloMovimiento2[i]);
+
+	}
+	try {
+		if (arregloMovimiento2[0] == "P1" && arregloMovimiento2[1] == "P2") {
+			//poner metodo que quite de la pila 1 y agregue en la pila 2
+		}
+		if (arregloMovimiento2[0] == "P1" && arregloMovimiento2[1] == "P") {
+			//poner metodo que quite de la pila 1 y agregue en la pila 3
+		}
+		if (arregloMovimiento2[0] == "P1" && arregloMovimiento2[1] == "P4") {
+			//poner metodo que quite de la pila 1 y agregue en la pila 4
+		}
+		if (arregloMovimiento2[0] == "P2" && arregloMovimiento2[1] == "P1") {
+			//poner metodo que quite de la pila 2 y agregue en la pila 1
+		}
+		if (arregloMovimiento2[0] == "P2" && arregloMovimiento2[1] == "P3") {
+			//poner metodo que quite de la pila 2 y agregue en la pila 3
+		}
+		if (arregloMovimiento2[0] == "P2" && arregloMovimiento2[1] == "P4") {
+			//poner metodo que quite de la pila 2 y agregue en la pila 4
+		}
+		if (arregloMovimiento2[0] == "P3" && arregloMovimiento2[1] == "P1") {
+			//poner metodo que quite de la pila 3 y agregue en la pila 1
+		}
+		if (arregloMovimiento2[0] == "P3" && arregloMovimiento2[1] == "P2") {
+			//poner metodo que quite de la pila 3 y agregue en la pila 2
+		}
+		if (arregloMovimiento2[0] == "P3" && arregloMovimiento2[1] == "P4") {
+			//poner metodo que quite de la pila 3 y agregue en la pila 4
+		}
+		if (arregloMovimiento2[0] == "P4" && arregloMovimiento2[1] == "P1") {
+			//poner metodo que quite de la pila 4 y agregue en la pila 1
+		}
+		if (arregloMovimiento2[0] == "P4" && arregloMovimiento2[1] == "P2") {
+			//poner metodo que quite de la pila 4 y agregue en la pila 2
+		}
+		if (arregloMovimiento2[0] == "P4" && arregloMovimiento2[1] == "P3") {
+			//poner metodo que quite de la pila 4 y agregue en la pila 3
+		}
+
+	}
+	catch (IO::IOException^ e) {
+		MessageBox::Show("Datos ingresados no admitidos");
+	}
+	txtMedio->Clear();
 }
 };
 }
