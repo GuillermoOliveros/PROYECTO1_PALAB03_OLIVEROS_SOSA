@@ -31,6 +31,9 @@ namespace COLORMANIAPALAB03PR1 {
 			//
 			
 		}
+		array<String^>^ arreglo;
+		array<String^>^ arreglo2;
+		array<String^>^ arreglo3;
 	private: System::Windows::Forms::Button^ btnEmpeza;
 	public:
 	private: System::Windows::Forms::Label^ label3;
@@ -39,6 +42,10 @@ namespace COLORMANIAPALAB03PR1 {
 	private: System::Windows::Forms::Label^ minutos;
 	private: System::Windows::Forms::Timer^ tiempo;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
 
 	public:
 		static array<String^>^ Arreglopos;
@@ -90,6 +97,10 @@ namespace COLORMANIAPALAB03PR1 {
 			this->minutos = (gcnew System::Windows::Forms::Label());
 			this->tiempo = (gcnew System::Windows::Forms::Timer(this->components));
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
@@ -122,7 +133,7 @@ namespace COLORMANIAPALAB03PR1 {
 			// btnEmpeza
 			// 
 			this->btnEmpeza->Location = System::Drawing::Point(207, 331);
-			this->btnEmpeza->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnEmpeza->Margin = System::Windows::Forms::Padding(4);
 			this->btnEmpeza->Name = L"btnEmpeza";
 			this->btnEmpeza->Size = System::Drawing::Size(221, 28);
 			this->btnEmpeza->TabIndex = 10;
@@ -159,7 +170,7 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(465, 2);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(76, 68);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -185,13 +196,53 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToDeleteRows = false;
+			this->dataGridView1->AllowUserToOrderColumns = true;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(188, 103);
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
+				this->Column1,
+					this->Column2, this->Column3, this->Column4
+			});
+			this->dataGridView1->Location = System::Drawing::Point(223, 94);
 			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(426, 197);
+			this->dataGridView1->Size = System::Drawing::Size(354, 176);
 			this->dataGridView1->TabIndex = 11;
+			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"Pila 1";
+			this->Column1->MinimumWidth = 6;
+			this->Column1->Name = L"Column1";
+			this->Column1->ReadOnly = true;
+			this->Column1->Width = 75;
+			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"Pila 2";
+			this->Column2->MinimumWidth = 6;
+			this->Column2->Name = L"Column2";
+			this->Column2->ReadOnly = true;
+			this->Column2->Width = 75;
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"Pila 3";
+			this->Column3->MinimumWidth = 6;
+			this->Column3->Name = L"Column3";
+			this->Column3->ReadOnly = true;
+			this->Column3->Width = 75;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Pila 4";
+			this->Column4->MinimumWidth = 6;
+			this->Column4->Name = L"Column4";
+			this->Column4->ReadOnly = true;
+			this->Column4->Width = 75;
 			// 
 			// Facil
 			// 
@@ -208,7 +259,7 @@ namespace COLORMANIAPALAB03PR1 {
 			this->Controls->Add(this->listBoxPrueba);
 			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Facil";
 			this->Text = L"Facil";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -244,14 +295,16 @@ namespace COLORMANIAPALAB03PR1 {
 					for (int i = 0; i < Arreglopos->Length; i++) {
 						MessageBox::Show(Arreglopos[i]);
 						listBoxPrueba->Items->Add(Arreglopos[i]);
-						
+						arreglo = Arreglopos[0]->Split(',');
+						arreglo2 = Arreglopos[1]->Split(',');
+						arreglo3 = Arreglopos[2]->Split(',');
 						
 					}
 					
 				}
 				InputStream->Close();
 			}
-			StreamReader^ Input = gcnew StreamReader(Arreglopos);
+			
 			
 
 		}
@@ -259,28 +312,58 @@ namespace COLORMANIAPALAB03PR1 {
 	}
  private: System::Void btnEmpeza_Click_1(System::Object^ sender, System::EventArgs^ e) {
 			   tiempo->Start();
-			   for (int i = 0; i < Arreglopos->Length; i++) {
-				   if (Arreglopos[i] == "R") {
-					   Arreglopos[i] = "1";
+			   dataGridView1->Rows->Add(5);
+			   for (int i = 0; i < arreglo->Length; i++) {
+				   if (arreglo[i]) {
+					   if (arreglo[i] == "M") {
+						   dataGridView1->Rows[i]->Cells[0]->Style->BackColor = Color::Purple;
+					   }
+					   if (arreglo[i] == "V") {
+						   dataGridView1->Rows[i]->Cells[0]->Style->BackColor = Color::Green;
+					   }
+					   if (arreglo[i] == "R") {
+						   dataGridView1->Rows[i]->Cells[0]->Style->BackColor = Color::Red;
+					   }
+					   if (arreglo[i] == "A") {
+						   dataGridView1->Rows[i]->Cells[0]->Style->BackColor = Color::Yellow;
+					   }
 				   }
-				   if (Arreglopos[i] == "V") {
-					   Arreglopos[i] = "2";
-				   }
-				   if (Arreglopos[i] == "M") {
-					   Arreglopos[i] = "3";
-				   }
-				   if (Arreglopos[i] == "A") {
-					   Arreglopos[i] = "4";
-				   }
-				   if (Arreglopos[i] == "X") {
-					   Arreglopos[i] = "0";
-				   }
+
 			   }
-			   int arregloColores[30];
-			   for (int i = 0; i < Arreglopos->Length; i++) {
-				   arregloColores[i] = Convert::ToInt32(Arreglopos[i]);
-				   MessageBox::Show(Arreglopos[i]);
-				   listBoxPrueba->Items->Add(arregloColores[i]);
+			   for (int i = 0; i < arreglo2->Length; i++) {
+				   if (arreglo2[i]) {
+					   
+
+					   if (arreglo2[i] == "M") {
+						   dataGridView1->Rows[i]->Cells[1]->Style->BackColor = Color::Purple;
+					   }
+					   if (arreglo2[i] == "V") {
+						   dataGridView1->Rows[i]->Cells[1]->Style->BackColor = Color::Green;
+					   }
+					   if (arreglo2[i] == "R") {
+						   dataGridView1->Rows[i]->Cells[1]->Style->BackColor = Color::Red;
+					   }
+					   if (arreglo2[i] == "A") {
+						   dataGridView1->Rows[i]->Cells[1]->Style->BackColor = Color::Yellow;
+					   }
+				   }
+
+			   }
+			   for (int i = 0; i < arreglo3->Length; i++) {
+				   if (arreglo3[i]) {
+					   if (arreglo3[i] == "M") {
+						   dataGridView1->Rows[i]->Cells[2]->Style->BackColor = Color::Purple;
+					   }
+					   if (arreglo3[i] == "V") {
+						   dataGridView1->Rows[i]->Cells[2]->Style->BackColor = Color::Green;
+					   }
+					   if (arreglo3[i] == "R") {
+						   dataGridView1->Rows[i]->Cells[2]->Style->BackColor = Color::Red;
+					   }
+					   if (arreglo3[i] == "A") {
+						   dataGridView1->Rows[i]->Cells[2]->Style->BackColor = Color::Yellow;
+					   }
+				   }
 
 			   }
 			   
