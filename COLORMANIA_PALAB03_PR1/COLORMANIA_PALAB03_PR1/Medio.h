@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Medio.h"
 namespace COLORMANIAPALAB03PR1 {
 
 	using namespace System;
@@ -247,9 +247,11 @@ private: System::Void tiempo_Tick(System::Object^ sender, System::EventArgs^ e) 
 		segundos->Text = seg.ToString();
 	}
 
-	if (min == 20)
+	if (min == 10)
 	{
 		MessageBox::Show("Has Perdido!");
+		Form::AcceptButton;
+		Form::Close();
 	}
 }
 private: System::Void Medio_Load(System::Object^ sender, System::EventArgs^ e) {
