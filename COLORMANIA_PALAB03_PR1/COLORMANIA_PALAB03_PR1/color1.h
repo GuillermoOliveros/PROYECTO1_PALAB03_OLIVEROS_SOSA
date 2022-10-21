@@ -11,7 +11,7 @@ public:
 	String^ pilaVerde;
 	String^ pilaMorada;
 	String^ pilaAmarilla;
-
+	
 	
 
 

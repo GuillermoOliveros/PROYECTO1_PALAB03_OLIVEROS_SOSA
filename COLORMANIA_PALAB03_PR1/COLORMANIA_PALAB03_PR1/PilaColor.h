@@ -10,7 +10,7 @@ private:
 
 public:
 	PilaColor();
-
+	
 	NodoColor* Tope();
 	int Valor(int num);
 	int ExtraerValorTope();

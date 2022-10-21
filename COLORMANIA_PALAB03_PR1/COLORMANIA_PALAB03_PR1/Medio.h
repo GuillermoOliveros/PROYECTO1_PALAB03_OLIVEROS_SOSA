@@ -42,7 +42,10 @@ namespace COLORMANIAPALAB03PR1 {
 		array<String^>^ arregloMedio;
 		array<String^>^ arregloMedio2;
 		array<String^>^ arregloMedio3;
-		array<String^>^ arregloMedio4;
+	private: System::Windows::Forms::TextBox^ txtMedio;
+	public:
+	private: System::Windows::Forms::Button^ button2;
+		   array<String^>^ arregloMedio4;
 		
 	protected:
 		/// <summary>
@@ -91,6 +94,8 @@ namespace COLORMANIAPALAB03PR1 {
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->txtMedio = (gcnew System::Windows::Forms::TextBox());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
@@ -234,12 +239,30 @@ namespace COLORMANIAPALAB03PR1 {
 			this->Column4->Name = L"Column4";
 			this->Column4->ReadOnly = true;
 			// 
+			// txtMedio
+			// 
+			this->txtMedio->Location = System::Drawing::Point(483, 303);
+			this->txtMedio->Name = L"txtMedio";
+			this->txtMedio->Size = System::Drawing::Size(155, 22);
+			this->txtMedio->TabIndex = 16;
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(483, 327);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(155, 35);
+			this->button2->TabIndex = 17;
+			this->button2->Text = L"Ingresar movimiento ";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
 			// Medio
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Orange;
 			this->ClientSize = System::Drawing::Size(685, 374);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->txtMedio);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->btnEmpeza);
 			this->Controls->Add(this->label3);
@@ -308,7 +331,7 @@ namespace COLORMANIAPALAB03PR1 {
 
 		}
 		for (int i = 0; i < arregloMedio2->Length; i++) {
-			MessageBox::Show(arregloMedio2[i]);
+			
 			if (arregloMedio2[i]) {
 
 
