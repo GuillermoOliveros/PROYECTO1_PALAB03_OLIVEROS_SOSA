@@ -13,7 +13,7 @@ void ListaColor::Add(int item) {
 		tail = Nodo;
 	}
 	else { //Tiene elementos
-		header->next = Nodo;
+		Nodo->next = header;
 		header = Nodo;
 	}
 	count++;

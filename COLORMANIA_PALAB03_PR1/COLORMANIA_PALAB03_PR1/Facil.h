@@ -586,16 +586,11 @@ private: System::Void tiempo_Tick_1(System::Object^ sender, System::EventArgs^ e
 		}
 		try {
 			if (arregloMovimiento[0] == "P1" && arregloMovimiento[1] == "P2") {
-					temporal = arregloInt[0];
-					Lista2->Add(temporal);
-					int w = Lista2->GetItem(0);
-					arregloInt2[0] = w;
+					
+					Lista2->Add(Lista1->GetItem(0));
 					Lista1->RemoveAt(0);
-					
-					
-				
 			}
-			if (arregloMovimiento[0] == "P1" && arregloMovimiento[1] == "P") {
+			if (arregloMovimiento[0] == "P1" && arregloMovimiento[1] == "P3") {
 				//poner metodo que quite de la pila 1 y agregue en la pila 3
 			}
 			if (arregloMovimiento[0] == "P1" && arregloMovimiento[1] == "P4") {
@@ -636,6 +631,10 @@ private: System::Void tiempo_Tick_1(System::Object^ sender, System::EventArgs^ e
 		arregloInt = gcnew array< Int32 >(Lista1->Count());
 		for (int i = 0; i < Lista1->Count(); i++) {
 			arregloInt[i] = Lista1->GetItem(i);
+		}
+		arregloInt2 = gcnew array< Int32 >(Lista1->Count());
+		for (int i = 0; i < Lista2->Count(); i++) {
+			arregloInt2[i] = Lista2->GetItem(i);
 		}
 		for (int i = 0; i < arregloInt->Length; i++) {
 
