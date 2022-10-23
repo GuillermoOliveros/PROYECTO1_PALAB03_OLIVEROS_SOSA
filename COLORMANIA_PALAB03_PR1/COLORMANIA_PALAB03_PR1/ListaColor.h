@@ -16,8 +16,7 @@ class ListaColor {
 		/// Apuntador hacia siguiente Nodo
 		/// </summary>
 		Node* next;
-		Node () {}
-		~Node (){}
+		 
 	};
 
 
@@ -78,7 +77,7 @@ public:
 	/// </summary>
 	/// <param name="index">Posición/Índice (base 0) dentro de la lista</param>
 	/// <exception cref="System.ArgumentOutOfRangeException">index menor a 0 o index mayor o igual a Count< / exception>
-	void RemoveAt(int index);
+	void RemoveAtFirst();
 
 	/// <summary>
 	/// Verifica si el elemento indicado se encuentra en la lista
@@ -93,6 +92,6 @@ public:
 	/// <param name="item">Elemento a eliminar</param>
 	/// <returns> Verdadero si el elemento fue removido, Falso si no fue encontrado< / returns>
 	bool Remove(int item);
-	Node* ExtractAtStart();
+	
 };
 

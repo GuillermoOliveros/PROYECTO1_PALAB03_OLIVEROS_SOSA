@@ -466,6 +466,26 @@ namespace COLORMANIAPALAB03PR1 {
 					   arregloInt4[i] = 4;
 				   }
 			   }
+			   for (int i = 0; i < arregloInt->Length / 2; i++) {
+				   int aux = arregloInt[i];
+				   arregloInt[i] = arregloInt[arregloInt->Length - 1 - i];
+				   arregloInt[arregloInt->Length - 1 - i] = aux;
+			   }
+			   for (int i = 0; i < arregloInt2->Length / 2; i++) {
+				   int aux = arregloInt2[i];
+				   arregloInt2[i] = arregloInt2[arregloInt2->Length - 1 - i];
+				   arregloInt2[arregloInt2->Length - 1 - i] = aux;
+			   }
+			   for (int i = 0; i < arregloInt3->Length / 2; i++) {
+				   int aux = arregloInt3[i];
+				   arregloInt3[i] = arregloInt3[arregloInt3->Length - 1 - i];
+				   arregloInt3[arregloInt3->Length - 1 - i] = aux;
+			   }
+			   for (int i = 0; i < arregloInt4->Length / 2; i++) {
+				   int aux = arregloInt4[i];
+				   arregloInt4[i] = arregloInt4[arregloInt4->Length - 1 - i];
+				   arregloInt4[arregloInt4->Length - 1 - i] = aux;
+			   }
 			   for (int i = 0; i < arregloInt->Length; i++) {
 				   Lista1->Add(arregloInt[i]);
 			   }
@@ -480,7 +500,7 @@ namespace COLORMANIAPALAB03PR1 {
 			   }
 			   for (int i = 0; i < Lista1->Count(); i++) {
 
-
+				   dataGridView1->ClearSelection();
 				   if (Lista1->GetItem(i) == 1) {
 					   dataGridView1->Rows[i]->Cells[0]->Style->BackColor = Color::Purple;
 				   }
@@ -581,40 +601,73 @@ private: System::Void tiempo_Tick_1(System::Object^ sender, System::EventArgs^ e
 			if (arregloMovimiento[0] == "P1" && arregloMovimiento[1] == "P2") {
 				int valor = Lista1->GetItem(0);
 					Lista2->Add(valor);
-					Lista1->RemoveAt(0);
+					Lista1->RemoveAtFirst();
 					
 			}
 			if (arregloMovimiento[0] == "P1" && arregloMovimiento[1] == "P3") {
+				int valor = Lista1->GetItem(0);
+				Lista3->Add(valor);
+				Lista1->RemoveAtFirst();
 				//poner metodo que quite de la pila 1 y agregue en la pila 3
 			}
 			if (arregloMovimiento[0] == "P1" && arregloMovimiento[1] == "P4") {
+				int valor = Lista1->GetItem(0);
+				Lista4->Add(valor);
+				Lista1->RemoveAtFirst();
 				//poner metodo que quite de la pila 1 y agregue en la pila 4
 			}
 			if (arregloMovimiento[0] == "P2" && arregloMovimiento[1] == "P1") {
+				int valor = Lista2->GetItem(0);
+				Lista1->Add(valor);
+				Lista2->RemoveAtFirst();
 				//poner metodo que quite de la pila 2 y agregue en la pila 1
 			}
 			if (arregloMovimiento[0] == "P2" && arregloMovimiento[1] == "P3") {
+				int valor = Lista2->GetItem(0);
+				Lista3->Add(valor);
+				Lista2->RemoveAtFirst();
 				//poner metodo que quite de la pila 2 y agregue en la pila 3
 			}
 			if (arregloMovimiento[0] == "P2" && arregloMovimiento[1] == "P4") {
+				int valor = Lista2->GetItem(0);
+				Lista4->Add(valor);
+				Lista2->RemoveAtFirst();
 				//poner metodo que quite de la pila 2 y agregue en la pila 4
 			}
 			if (arregloMovimiento[0] == "P3" && arregloMovimiento[1] == "P1") {
+				int valor = Lista3->GetItem(0);
+				Lista1->Add(valor);
+				Lista3->RemoveAtFirst();
 				//poner metodo que quite de la pila 3 y agregue en la pila 1
 			}
 			if (arregloMovimiento[0] == "P3" && arregloMovimiento[1] == "P2") {
+				int valor = Lista3->GetItem(0);
+				Lista2->Add(valor);
+				Lista3->RemoveAtFirst();
 				//poner metodo que quite de la pila 3 y agregue en la pila 2
 			}
 			if (arregloMovimiento[0] == "P3" && arregloMovimiento[1] == "P4") {
+				int valor = Lista3->GetItem(0);
+				Lista4->Add(valor);
+				Lista3->RemoveAtFirst();
 				//poner metodo que quite de la pila 3 y agregue en la pila 4
 			}
 			if (arregloMovimiento[0] == "P4" && arregloMovimiento[1] == "P1") {
+				int valor = Lista4->GetItem(0);
+				Lista1->Add(valor);
+				Lista4->RemoveAtFirst();
 				//poner metodo que quite de la pila 4 y agregue en la pila 1
 			}
 			if (arregloMovimiento[0] == "P4" && arregloMovimiento[1] == "P2") {
+				int valor = Lista4->GetItem(0);
+				Lista2->Add(valor);
+				Lista4->RemoveAtFirst();
 				//poner metodo que quite de la pila 4 y agregue en la pila 2
 			}
 			if (arregloMovimiento[0] == "P4" && arregloMovimiento[1] == "P3") {
+				int valor = Lista4->GetItem(0);
+				Lista3->Add(valor);
+				Lista4->RemoveAtFirst();
 				//poner metodo que quite de la pila 4 y agregue en la pila 3
 			}
 
@@ -622,7 +675,9 @@ private: System::Void tiempo_Tick_1(System::Object^ sender, System::EventArgs^ e
 		catch (IO::IOException^ e) {
 			MessageBox::Show("Datos ingresados no admitidos");
 		}
-		
+		dataGridView1->Rows->Clear();
+		dataGridView1->Rows->Add(7);
+		dataGridView1->ClearSelection();
 		for (int i = 0; i < Lista1->Count(); i++) {
 
 			
