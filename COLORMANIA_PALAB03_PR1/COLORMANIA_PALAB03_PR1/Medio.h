@@ -48,6 +48,8 @@ namespace COLORMANIAPALAB03PR1 {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::ListBox^ listBox1;
 	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Button^ btnGuardarPartida;
+	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 		   array<String^>^ arregloMedio4;
 		
 	protected:
@@ -101,6 +103,8 @@ namespace COLORMANIAPALAB03PR1 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->btnGuardarPartida = (gcnew System::Windows::Forms::Button());
+			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
@@ -111,10 +115,10 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(23, 327);
-			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button1->Location = System::Drawing::Point(17, 266);
+			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(187, 34);
+			this->button1->Size = System::Drawing::Size(140, 28);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Ingresar archivo de texto";
 			this->button1->UseVisualStyleBackColor = true;
@@ -123,11 +127,10 @@ namespace COLORMANIAPALAB03PR1 {
 			// listBoxPrueba2
 			// 
 			this->listBoxPrueba2->FormattingEnabled = true;
-			this->listBoxPrueba2->ItemHeight = 16;
-			this->listBoxPrueba2->Location = System::Drawing::Point(542, 76);
-			this->listBoxPrueba2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->listBoxPrueba2->Location = System::Drawing::Point(406, 62);
+			this->listBoxPrueba2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->listBoxPrueba2->Name = L"listBoxPrueba2";
-			this->listBoxPrueba2->Size = System::Drawing::Size(120, 84);
+			this->listBoxPrueba2->Size = System::Drawing::Size(91, 69);
 			this->listBoxPrueba2->TabIndex = 1;
 			// 
 			// label3
@@ -136,10 +139,9 @@ namespace COLORMANIAPALAB03PR1 {
 			this->label3->BackColor = System::Drawing::Color::Transparent;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(597, 26);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Location = System::Drawing::Point(448, 21);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(15, 20);
+			this->label3->Size = System::Drawing::Size(11, 16);
 			this->label3->TabIndex = 13;
 			this->label3->Text = L":";
 			// 
@@ -148,20 +150,18 @@ namespace COLORMANIAPALAB03PR1 {
 			this->segundos->AutoSize = true;
 			this->segundos->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->segundos->Location = System::Drawing::Point(611, 12);
-			this->segundos->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->segundos->Location = System::Drawing::Point(458, 10);
 			this->segundos->Name = L"segundos";
-			this->segundos->Size = System::Drawing::Size(51, 36);
+			this->segundos->Size = System::Drawing::Size(41, 29);
 			this->segundos->TabIndex = 12;
 			this->segundos->Text = L"00";
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(464, 2);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
+			this->pictureBox1->Location = System::Drawing::Point(348, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(76, 68);
+			this->pictureBox1->Size = System::Drawing::Size(57, 55);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 11;
 			this->pictureBox1->TabStop = false;
@@ -171,19 +171,17 @@ namespace COLORMANIAPALAB03PR1 {
 			this->minutos->AutoSize = true;
 			this->minutos->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->minutos->Location = System::Drawing::Point(548, 12);
-			this->minutos->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->minutos->Location = System::Drawing::Point(411, 10);
 			this->minutos->Name = L"minutos";
-			this->minutos->Size = System::Drawing::Size(51, 36);
+			this->minutos->Size = System::Drawing::Size(41, 29);
 			this->minutos->TabIndex = 10;
 			this->minutos->Text = L"00";
 			// 
 			// btnEmpeza
 			// 
-			this->btnEmpeza->Location = System::Drawing::Point(216, 327);
-			this->btnEmpeza->Margin = System::Windows::Forms::Padding(4);
+			this->btnEmpeza->Location = System::Drawing::Point(162, 266);
 			this->btnEmpeza->Name = L"btnEmpeza";
-			this->btnEmpeza->Size = System::Drawing::Size(221, 34);
+			this->btnEmpeza->Size = System::Drawing::Size(166, 28);
 			this->btnEmpeza->TabIndex = 14;
 			this->btnEmpeza->Text = L"Empieza!";
 			this->btnEmpeza->UseVisualStyleBackColor = true;
@@ -203,13 +201,14 @@ namespace COLORMANIAPALAB03PR1 {
 				this->Column1,
 					this->Column2, this->Column3, this->Column4
 			});
-			this->dataGridView2->Location = System::Drawing::Point(41, 37);
+			this->dataGridView2->Location = System::Drawing::Point(31, 30);
+			this->dataGridView2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dataGridView2->MultiSelect = false;
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->ReadOnly = true;
 			this->dataGridView2->RowHeadersWidth = 51;
 			this->dataGridView2->RowTemplate->Height = 24;
-			this->dataGridView2->Size = System::Drawing::Size(396, 236);
+			this->dataGridView2->Size = System::Drawing::Size(297, 192);
 			this->dataGridView2->TabIndex = 15;
 			// 
 			// Column1
@@ -246,16 +245,18 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			// txtMedio
 			// 
-			this->txtMedio->Location = System::Drawing::Point(483, 303);
+			this->txtMedio->Location = System::Drawing::Point(362, 246);
+			this->txtMedio->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txtMedio->Name = L"txtMedio";
-			this->txtMedio->Size = System::Drawing::Size(155, 22);
+			this->txtMedio->Size = System::Drawing::Size(117, 20);
 			this->txtMedio->TabIndex = 16;
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(483, 327);
+			this->button2->Location = System::Drawing::Point(362, 266);
+			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(155, 35);
+			this->button2->Size = System::Drawing::Size(116, 28);
 			this->button2->TabIndex = 17;
 			this->button2->Text = L"Ingresar movimiento ";
 			this->button2->UseVisualStyleBackColor = true;
@@ -264,27 +265,39 @@ namespace COLORMANIAPALAB03PR1 {
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 16;
-			this->listBox1->Location = System::Drawing::Point(542, 165);
+			this->listBox1->Location = System::Drawing::Point(406, 134);
+			this->listBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(120, 84);
+			this->listBox1->Size = System::Drawing::Size(91, 69);
 			this->listBox1->TabIndex = 18;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(461, 270);
+			this->label1->Location = System::Drawing::Point(346, 219);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(162, 16);
+			this->label1->Size = System::Drawing::Size(128, 13);
 			this->label1->TabIndex = 19;
 			this->label1->Text = L"Cantidad de movimientos:";
 			// 
+			// btnGuardarPartida
+			// 
+			this->btnGuardarPartida->Location = System::Drawing::Point(77, 227);
+			this->btnGuardarPartida->Name = L"btnGuardarPartida";
+			this->btnGuardarPartida->Size = System::Drawing::Size(192, 23);
+			this->btnGuardarPartida->TabIndex = 20;
+			this->btnGuardarPartida->Text = L"Guardar Partida";
+			this->btnGuardarPartida->UseVisualStyleBackColor = true;
+			this->btnGuardarPartida->Click += gcnew System::EventHandler(this, &Medio::btnGuardarPartida_Click);
+			// 
 			// Medio
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Orange;
-			this->ClientSize = System::Drawing::Size(685, 374);
+			this->ClientSize = System::Drawing::Size(514, 304);
+			this->Controls->Add(this->btnGuardarPartida);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->button2);
@@ -298,7 +311,6 @@ namespace COLORMANIAPALAB03PR1 {
 			this->Controls->Add(this->listBoxPrueba2);
 			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Medio";
 			this->Text = L"Medio";
 			this->Load += gcnew System::EventHandler(this, &Medio::Medio_Load);
@@ -496,6 +508,47 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		MessageBox::Show("Datos ingresados no admitidos");
 	}
 	txtMedio->Clear();
+}
+private: System::Void btnGuardarPartida_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (System::Windows::Forms::DialogResult::OK == saveFileDialog1->ShowDialog())
+	{
+		StreamReader^ InputStream = gcnew StreamReader(saveFileDialog1->FileName);
+
+		if (InputStream != nullptr)
+		{
+			String^ guardar = saveFileDialog1->FileName;
+
+			StreamWriter^ GuardarPartida = File::CreateText(guardar);
+
+			GuardarPartida->Write(" --- PARTIDA GUARDADA CON ÉXITO --- ");
+			GuardarPartida->Write(" Dificultad: Fácil ");
+			GuardarPartida->Write("Tiempo Ocupado: " + minutos + ":" + segundos);
+			GuardarPartida->Write("Movimientos Oucpados: " + label1);
+			GuardarPartida->Write("Movimientos Realizados: " + listBox1->Text);
+			GuardarPartida->Write("Último Mapa: ");
+
+			GuardarPartida->Flush();
+			GuardarPartida->Close();
+
+		}
+
+		else {
+
+			String^ guardar = saveFileDialog1->FileName;
+
+			StreamWriter^ GuardarPartida = File::CreateText(guardar);
+
+			GuardarPartida->Write(" --- PARTIDA GUARDADA CON ÉXITO --- ");
+			GuardarPartida->Write(" Dificultad: Fácil ");
+			GuardarPartida->Write("Tiempo Ocupado: " + minutos + ":" + segundos);
+			GuardarPartida->Write("Movimientos Oucpados: " + label1);
+			GuardarPartida->Write("Movimientos Realizados: " + listBox1->Text);
+			GuardarPartida->Write("Último Mapa: ");
+
+			GuardarPartida->Flush();
+			GuardarPartida->Close();
+		}
+	}
 }
 };
 }

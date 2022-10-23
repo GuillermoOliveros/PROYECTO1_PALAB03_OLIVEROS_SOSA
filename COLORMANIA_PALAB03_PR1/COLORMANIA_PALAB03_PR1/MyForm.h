@@ -55,12 +55,13 @@ namespace COLORMANIAPALAB03PR1 {
 	private: System::Windows::Forms::Panel^ PanelMargen;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::Panel^ PanelContenedor;
+	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -79,6 +80,7 @@ namespace COLORMANIAPALAB03PR1 {
 			this->PanelMargen = (gcnew System::Windows::Forms::Panel());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->PanelContenedor = (gcnew System::Windows::Forms::Panel());
+			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->panelLateral->SuspendLayout();
 			this->PanelMargen->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -110,6 +112,7 @@ namespace COLORMANIAPALAB03PR1 {
 			this->button1->TabIndex = 4;
 			this->button1->Text = L"Guardar :P";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
 			// 
 			// btnGuardar
 			// 
@@ -230,19 +233,24 @@ namespace COLORMANIAPALAB03PR1 {
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void btnFacil_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->AbrirPanel(gcnew COLORMANIAPALAB03PR1::Facil);	
+		this->AbrirPanel(gcnew COLORMANIAPALAB03PR1::Facil);
 	}
 
-private: System::Void PanelContenedor_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void btnMedio_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->AbrirPanel(gcnew COLORMANIAPALAB03PR1::Medio);
-}
+	private: System::Void PanelContenedor_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+	}
+	private: System::Void btnMedio_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->AbrirPanel(gcnew COLORMANIAPALAB03PR1::Medio);
+	}
 
-private: System::Void btnDificil_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->AbrirPanel(gcnew COLORMANIAPALAB03PR1::Dificil);
-}
-};
+	private: System::Void btnDificil_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->AbrirPanel(gcnew COLORMANIAPALAB03PR1::Dificil);
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
 
+
+	}
+	};
 }
+	
+
