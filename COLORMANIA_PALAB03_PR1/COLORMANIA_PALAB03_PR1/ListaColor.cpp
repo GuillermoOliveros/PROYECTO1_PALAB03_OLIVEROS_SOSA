@@ -2,156 +2,68 @@
 
 //Funcionamiento de los métodos 
 
-ListaColor::ListaColor()
-{
-	Inicio = nullptr;
-	Final = nullptr;
-	recorrido = 0;
-}
+void ListaColor::Add(int item) {
 
-bool ListaColor::ListaVacia() {
-	return recorrido == 0;
-}
+	Node* Nodo = new Node();
+	Nodo->data = item;
 
-void::ListaColor::InsertarAlInicio(int valor)
-{
-	NodoColor* Color = new NodoColor();
-	Color->valor = valor;
-
-
-	if (ListaColor::ListaVacia())
-	{
-		Inicio = Color;
-		Final = Color;
+	//Si la lits esta vacia
+	if (Count() == 0) {
+		header = Nodo;
+		tail = Nodo;
 	}
-
-	else
-	{
-		Color->next = Inicio;
-		Inicio = Color;
+	else { //Tiene elementos
+		tail->next = Nodo;
+		tail = Nodo;
 	}
-
-	recorrido++;
-
+	count++;
 }
 
-int ListaColor::TotalDatos()
-{
-	return recorrido;
+int ListaColor::Count() {
+	return count;
 }
 
-void::ListaColor::InsertarAlFinal(int valor)
-{
-	NodoColor* color = new NodoColor();
-	color->valor = valor;
+int ListaColor::GetItem(int index) {
 
-	if (ListaColor::ListaVacia() == true)
-	{
-		Inicio = color;
-		Final = color;
-	}
+	int contador = 0;
+	struct Node* temporal = header;
 
-	else
-	{	
-	color->next = Final;
-	Final = color;
-	}
+	while ((temporal) && contador <= index) {
+		if (contador == index) {
 
-	recorrido++;
-	
-}
+			try {
+				if (temporal != nullptr) {
 
-NodoColor* ListaColor::SacarAlPrincio()
-{
-	NodoColor* aux = Inicio;
+					return temporal->data;
 
-	if (ListaVacia() == false)
-	{
-		Inicio = Inicio->next;
 
-		if (recorrido == 1)
-		{
-			Final = Inicio;
-		}
-
-		++recorrido;
-	}
-	return aux;
-}
-
-NodoColor* ListaColor::SacarAlFinal()
-{
-	NodoColor* aux = Final;
-
-	if (ListaColor::ListaVacia() == false)
-	{
-		if (recorrido == 1)
-		{
-			Final = Final->next;
-			Inicio = Final;
-		}
-		
-		else 
-		{
-			NodoColor* aux1 = Inicio;
-			aux = aux1->next;
-			while (aux != Final) 
-			{
-				aux1 = aux;
-				aux = aux1->next;
+				}
 			}
-			aux1->next = aux->next;
-			Final = aux1;
+			catch (int nullptr_t) {
+				return 0;
+			}
+
+
 		}
-		++recorrido;
+		temporal = temporal->next;
+		contador++;
 	}
-	return aux;
+
+	return 0;
 }
 
-NodoColor* ListaColor::ObtenerNodo(int valor)
-{
-	NodoColor* aux = Inicio;
-	while  (aux->valor != valor)
-	{
-		aux = aux->next;
-	}
-	return aux;
+int ListaColor::LastValue(int index) {
 
-}
+	int contador = 0;
+	struct Node* temporal = header;
 
-int ListaColor::ObtenerValor(int pos)
-{
-	if ((pos >= 0) && (pos < recorrido))
-	{
-		NodoColor* aux = Inicio;
-		int n = 0;
-		while ((aux) && (n < pos))
-		{
-			aux = aux->next;
-			n++;
+	while ((temporal) && contador <= index - 1) {
+		if (contador == index - 1) {
+			return temporal->data;
 		}
-		return aux->valor;
+		temporal = temporal->next;
+		contador++;
 	}
-	return -1;
+
 }
 
-int ListaColor::ObtenerPrimerValor()
-{
-	NodoColor* aux = Inicio;
-
-	return aux->valor;
-}
-
-int ListaColor::ObtenerUltimoValor()
-{
-	NodoColor* aux = Final;
-
-	return aux->valor;
-}
-
-void ListaColor::Clear() 
-{
-	recorrido = 0;
-	Inicio = nullptr;
-	Final = nullptr;
-}

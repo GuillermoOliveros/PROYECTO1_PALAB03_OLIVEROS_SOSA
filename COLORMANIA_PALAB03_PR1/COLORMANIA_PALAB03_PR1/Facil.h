@@ -1,9 +1,10 @@
 #pragma once
-#include "color1.h"
+
 #include "CronometroFacil.h"
 #include <string.h>
 #include <string>
 #include <iostream>
+
 
 namespace COLORMANIAPALAB03PR1 {
 
@@ -32,11 +33,16 @@ namespace COLORMANIAPALAB03PR1 {
 			//
 			
 		}
-		array<String^>^ arreglo;
-		array<String^>^ arreglo2;
-		array<String^>^ arreglo3;
-		array<String^>^ arreglo4;
-		array<String^>^ arregloMovimiento;
+		array<String^>^ arreglo; //arreglo pila 1
+		array<String^>^ arreglo2; //arreglo pila 2
+		array<String^>^ arreglo3; //arreglo pila 3
+		array<String^>^ arreglo4; //arreglo pila 4
+		array<String^>^ arregloMovimiento; //arreglo de los movimientos ingresados 
+		array<Int32>^ arregloInt;
+		array<Int32>^ arregloInt2;
+		array<Int32>^ arregloInt3;
+		array<Int32>^ arregloInt4;
+		
 	private: System::Windows::Forms::Button^ btnEmpeza;
 	public:
 	private: System::Windows::Forms::Label^ label3;
@@ -67,7 +73,7 @@ namespace COLORMANIAPALAB03PR1 {
 
 
 	public:
-		static array<String^>^ Arreglopos;
+		array<String^>^ Arreglopos; //arreglo principal, recibe el archivo de texto inicial y lo divide por pilas 
 		
 		
 
@@ -377,88 +383,157 @@ namespace COLORMANIAPALAB03PR1 {
 				}
 				InputStream->Close();
 			}
+			//color morado = 1
+			//color verde = 2
+			//color rojo = 3
+			//color amarillo = 4
 			
 			dataGridView1->Rows->Add(7);
-
+			
+			
 		}
 		
 	}
  private: System::Void btnEmpeza_Click_1(System::Object^ sender, System::EventArgs^ e) {
 			   tiempo->Start();
 			   
-
+			   arregloInt = gcnew array< Int32 >(arreglo->Length);
 			   for (int i = 0; i < arreglo->Length; i++) {
+				   if (arreglo[i] == "M") {
+
+					   arregloInt[i] = 1;
+				   }
+				   else if (arreglo[i] == "V") {
+					   arregloInt[i] = 2;
+				   }
+				   else if (arreglo[i] == "R") {
+					   arregloInt[i] = 3;
+				   }
+				   else if (arreglo[i] == "A") {
+					   arregloInt[i] = 4;
+				   }
+			   }
+			   arregloInt2 = gcnew array< Int32 >(arreglo2->Length);
+			   for (int i = 0; i < arreglo2->Length; i++) {
+				   if (arreglo2[i] == "M") {
+
+					   arregloInt2[i] = 1;
+				   }
+				   else if (arreglo2[i] == "V") {
+					   arregloInt2[i] = 2;
+				   }
+				   else if (arreglo2[i] == "R") {
+					   arregloInt2[i] = 3;
+				   }
+				   else if (arreglo2[i] == "A") {
+					   arregloInt2[i] = 4;
+				   }
+			   }
+			   arregloInt3 = gcnew array< Int32 >(arreglo3->Length);
+			   for (int i = 0; i < arreglo3->Length; i++) {
+				   if (arreglo3[i] == "M") {
+
+					   arregloInt3[i] = 1;
+				   }
+				   else if (arreglo3[i] == "V") {
+					   arregloInt3[i] = 2;
+				   }
+				   else if (arreglo3[i] == "R") {
+					   arregloInt3[i] = 3;
+				   }
+				   else if (arreglo3[i] == "A") {
+					   arregloInt3[i] = 4;
+				   }
+			   }
+			   arregloInt4 = gcnew array< Int32 >(arreglo4->Length);
+			   for (int i = 0; i < arreglo4->Length; i++) {
+				   if (arreglo4[i] == "M") {
+
+					   arregloInt4[i] = 1;
+				   }
+				   else if (arreglo4[i] == "V") {
+					   arregloInt4[i] = 2;
+				   }
+				   else if (arreglo4[i] == "R") {
+					   arregloInt4[i] = 3;
+				   }
+				   else if (arreglo4[i] == "A") {
+					   arregloInt4[i] = 4;
+				   }
+			   }
+			   for (int i = 0; i < arregloInt->Length; i++) {
 				   
-				   if (arreglo[i]) {
-					   if (arreglo[i] == "M") {
+				   if (arregloInt[i]) {
+					   if (arregloInt[i] == 1) {
 						   dataGridView1->Rows[i]->Cells[0]->Style->BackColor = Color::Purple;
 					   }
-					   if (arreglo[i] == "V") {
+					   if (arregloInt[i] == 2) {
 						   dataGridView1->Rows[i]->Cells[0]->Style->BackColor = Color::Green;
 					   }
-					   if (arreglo[i] == "R") {
+					   if (arregloInt[i] == 3) {
 						   dataGridView1->Rows[i]->Cells[0]->Style->BackColor = Color::Red;
 					   }
-					   if (arreglo[i] == "A") {
+					   if (arregloInt[i] == 4) {
 						   dataGridView1->Rows[i]->Cells[0]->Style->BackColor = Color::Yellow;
 					   }
 				   }
 
 			   }
-			   for (int i = 0; i < arreglo2->Length; i++) {
+			   for (int i = 0; i < arregloInt2->Length; i++) {
 				   
-				   if (arreglo2[i]) {
+				   if (arregloInt2[i]) {
 					   
 
-					   if (arreglo2[i] == "M") {
+					   if (arregloInt2[i] == 1) {
 						   dataGridView1->Rows[i]->Cells[1]->Style->BackColor = Color::Purple;
 					   }
-					   if (arreglo2[i] == "V") {
+					   if (arregloInt2[i] == 2) {
 						   dataGridView1->Rows[i]->Cells[1]->Style->BackColor = Color::Green;
 					   }
-					   if (arreglo2[i] == "R") {
+					   if (arregloInt2[i] == 3) {
 						   dataGridView1->Rows[i]->Cells[1]->Style->BackColor = Color::Red;
 					   }
-					   if (arreglo2[i] == "A") {
+					   if (arregloInt2[i] == 4) {
 						   dataGridView1->Rows[i]->Cells[1]->Style->BackColor = Color::Yellow;
 					   }
 				   }
 
 			   }
-			   for (int i = 0; i < arreglo3->Length; i++) {
-				   if (arreglo3[i]) {
-					   if (arreglo3[i] == "M") {
+			   for (int i = 0; i < arregloInt3->Length; i++) {
+				   if (arregloInt3[i]) {
+					   if (arregloInt3[i] == 1) {
 						   dataGridView1->Rows[i]->Cells[2]->Style->BackColor = Color::Purple;
 					   }
-					   if (arreglo3[i] == "V") {
+					   if (arregloInt3[i] == 2) {
 						   dataGridView1->Rows[i]->Cells[2]->Style->BackColor = Color::Green;
 					   }
-					   if (arreglo3[i] == "R") {
+					   if (arregloInt3[i] == 3) {
 						   dataGridView1->Rows[i]->Cells[2]->Style->BackColor = Color::Red;
 					   }
-					   if (arreglo3[i] == "A") {
+					   if (arregloInt3[i] == 4) {
 						   dataGridView1->Rows[i]->Cells[2]->Style->BackColor = Color::Yellow;
 					   }
 				   }
 
 			   }
-			   for (int i = 0; i < arreglo4->Length; i++) {
-				   if (arreglo4[i]) {
-					   if (arreglo4[i] == "M") {
+			   for (int i = 0; i < arregloInt4->Length; i++) {
+				   if (arregloInt4[i]) {
+					   if (arregloInt4[i] == 1) {
 						   dataGridView1->Rows[i]->Cells[3]->Style->BackColor = Color::Purple;
 					   }
-					   if (arreglo4[i] == "V") {
+					   if (arregloInt4[i] == 2) {
 						   dataGridView1->Rows[i]->Cells[3]->Style->BackColor = Color::Green;
 					   }
-					   if (arreglo4[i] == "R") {
+					   if (arregloInt4[i] == 3) {
 						   dataGridView1->Rows[i]->Cells[3]->Style->BackColor = Color::Red;
 					   }
-					   if (arreglo4[i] == "A") {
+					   if (arregloInt4[i] == 4) {
 						   dataGridView1->Rows[i]->Cells[3]->Style->BackColor = Color::Yellow;
 					   }
 				   }
 
 			   }
+			   
 		   }
 
 
