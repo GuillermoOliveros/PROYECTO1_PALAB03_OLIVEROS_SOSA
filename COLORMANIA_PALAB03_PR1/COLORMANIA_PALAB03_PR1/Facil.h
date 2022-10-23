@@ -5,6 +5,7 @@
 #include <string>
 #include <iostream>
 #include "ListaColor.h"
+#include "PilaColor.h"
 
 
 namespace COLORMANIAPALAB03PR1 {
@@ -47,6 +48,10 @@ namespace COLORMANIAPALAB03PR1 {
 		ListaColor* Lista2 = new ListaColor();
 		ListaColor* Lista3 = new ListaColor();
 		ListaColor* Lista4 = new ListaColor();
+		bool verLista1;
+		bool verLista2;
+		bool verLista3;
+		bool verLista4;
 		
 	private: System::Windows::Forms::Button^ btnEmpeza;
 	public:
@@ -394,7 +399,7 @@ namespace COLORMANIAPALAB03PR1 {
 			//color amarillo = 4
 			
 			dataGridView1->Rows->Add(7);
-			
+			dataGridView1->ClearSelection();
 			
 		}
 		
@@ -675,6 +680,10 @@ private: System::Void tiempo_Tick_1(System::Object^ sender, System::EventArgs^ e
 		catch (IO::IOException^ e) {
 			MessageBox::Show("Datos ingresados no admitidos");
 		}
+		verLista1 = Lista1->todosIguales();
+		verLista2 = Lista2->todosIguales();
+		verLista3 = Lista3->todosIguales();
+		verLista4 = Lista4->todosIguales();
 		dataGridView1->Rows->Clear();
 		dataGridView1->Rows->Add(7);
 		dataGridView1->ClearSelection();
@@ -745,6 +754,11 @@ private: System::Void tiempo_Tick_1(System::Object^ sender, System::EventArgs^ e
 				}
 			
 
+		}
+		
+		
+		if ((verLista1 == true) && (verLista2 == true) && (verLista3 == true) && (verLista4 == true)) {
+			MessageBox::Show("Ha ganado, FELICIDADES!");
 		}
 		txtFacil->Clear();
 	

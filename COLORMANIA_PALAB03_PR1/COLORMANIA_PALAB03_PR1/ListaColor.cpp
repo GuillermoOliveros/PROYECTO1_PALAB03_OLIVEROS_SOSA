@@ -55,5 +55,21 @@ void ListaColor::RemoveAtFirst() {
 	header = header->next;
 }
 
+bool ListaColor::todosIguales() {
+	
+		if (Count() == 0) {
+			return false;
+		}
+
+		for (int i = 0; i < Count()-1; i++) {
+			if (GetItem(0) != GetItem(i)) {
+				return false;
+			}
+		}
+
+		return true;
+	
+}
+
 
 
