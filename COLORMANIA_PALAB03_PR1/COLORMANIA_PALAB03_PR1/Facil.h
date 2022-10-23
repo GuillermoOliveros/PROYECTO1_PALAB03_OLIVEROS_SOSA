@@ -4,6 +4,7 @@
 #include <string.h>
 #include <string>
 #include <iostream>
+#include "ListaColor.h"
 
 
 namespace COLORMANIAPALAB03PR1 {
@@ -42,6 +43,10 @@ namespace COLORMANIAPALAB03PR1 {
 		array<Int32>^ arregloInt2;
 		array<Int32>^ arregloInt3;
 		array<Int32>^ arregloInt4;
+		ListaColor* Lista1 = new ListaColor();
+		ListaColor* Lista2 = new ListaColor();
+		ListaColor* Lista3 = new ListaColor();
+		ListaColor* Lista4 = new ListaColor();
 		
 	private: System::Windows::Forms::Button^ btnEmpeza;
 	public:
@@ -462,6 +467,18 @@ namespace COLORMANIAPALAB03PR1 {
 				   }
 			   }
 			   for (int i = 0; i < arregloInt->Length; i++) {
+				   Lista1->Add(arregloInt[i]);
+			   }
+			   for (int i = 0; i < arregloInt2->Length; i++) {
+				   Lista2->Add(arregloInt2[i]);
+			   }
+			   for (int i = 0; i < arregloInt3->Length; i++) {
+				   Lista3->Add(arregloInt3[i]);
+			   }
+			   for (int i = 0; i < arregloInt4->Length; i++) {
+				   Lista4->Add(arregloInt4[i]);
+			   }
+			   for (int i = 0; i < arregloInt->Length; i++) {
 				   
 				   if (arregloInt[i]) {
 					   if (arregloInt[i] == 1) {
@@ -555,6 +572,7 @@ private: System::Void tiempo_Tick_1(System::Object^ sender, System::EventArgs^ e
 	   int contador;
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		contador++;
+		int temporal;
 		char separador = ',';
 		String^ txt;
 		txt = txtFacil->Text;
@@ -568,7 +586,12 @@ private: System::Void tiempo_Tick_1(System::Object^ sender, System::EventArgs^ e
 		}
 		try {
 			if (arregloMovimiento[0] == "P1" && arregloMovimiento[1] == "P2") {
-				//poner metodo que quite de la pila 1 y agregue en la pila 2
+					temporal = arregloInt[0];
+					Lista2->Add(temporal);
+					int w = Lista2->GetItem(0);
+					arregloInt2[0] = w;
+					
+				
 			}
 			if (arregloMovimiento[0] == "P1" && arregloMovimiento[1] == "P") {
 				//poner metodo que quite de la pila 1 y agregue en la pila 3
@@ -607,6 +630,78 @@ private: System::Void tiempo_Tick_1(System::Object^ sender, System::EventArgs^ e
 		}
 		catch (IO::IOException^ e) {
 			MessageBox::Show("Datos ingresados no admitidos");
+		}
+		for (int i = 0; i < arregloInt->Length; i++) {
+
+			if (arregloInt[i]) {
+				if (arregloInt[i] == 1) {
+					dataGridView1->Rows[i]->Cells[0]->Style->BackColor = Color::Purple;
+				}
+				if (arregloInt[i] == 2) {
+					dataGridView1->Rows[i]->Cells[0]->Style->BackColor = Color::Green;
+				}
+				if (arregloInt[i] == 3) {
+					dataGridView1->Rows[i]->Cells[0]->Style->BackColor = Color::Red;
+				}
+				if (arregloInt[i] == 4) {
+					dataGridView1->Rows[i]->Cells[0]->Style->BackColor = Color::Yellow;
+				}
+			}
+
+		}
+		for (int i = 0; i < arregloInt2->Length; i++) {
+
+			if (arregloInt2[i]) {
+
+
+				if (arregloInt2[i] == 1) {
+					dataGridView1->Rows[i]->Cells[1]->Style->BackColor = Color::Purple;
+				}
+				if (arregloInt2[i] == 2) {
+					dataGridView1->Rows[i]->Cells[1]->Style->BackColor = Color::Green;
+				}
+				if (arregloInt2[i] == 3) {
+					dataGridView1->Rows[i]->Cells[1]->Style->BackColor = Color::Red;
+				}
+				if (arregloInt2[i] == 4) {
+					dataGridView1->Rows[i]->Cells[1]->Style->BackColor = Color::Yellow;
+				}
+			}
+
+		}
+		for (int i = 0; i < arregloInt3->Length; i++) {
+			if (arregloInt3[i]) {
+				if (arregloInt3[i] == 1) {
+					dataGridView1->Rows[i]->Cells[2]->Style->BackColor = Color::Purple;
+				}
+				if (arregloInt3[i] == 2) {
+					dataGridView1->Rows[i]->Cells[2]->Style->BackColor = Color::Green;
+				}
+				if (arregloInt3[i] == 3) {
+					dataGridView1->Rows[i]->Cells[2]->Style->BackColor = Color::Red;
+				}
+				if (arregloInt3[i] == 4) {
+					dataGridView1->Rows[i]->Cells[2]->Style->BackColor = Color::Yellow;
+				}
+			}
+
+		}
+		for (int i = 0; i < arregloInt4->Length; i++) {
+			if (arregloInt4[i]) {
+				if (arregloInt4[i] == 1) {
+					dataGridView1->Rows[i]->Cells[3]->Style->BackColor = Color::Purple;
+				}
+				if (arregloInt4[i] == 2) {
+					dataGridView1->Rows[i]->Cells[3]->Style->BackColor = Color::Green;
+				}
+				if (arregloInt4[i] == 3) {
+					dataGridView1->Rows[i]->Cells[3]->Style->BackColor = Color::Red;
+				}
+				if (arregloInt4[i] == 4) {
+					dataGridView1->Rows[i]->Cells[3]->Style->BackColor = Color::Yellow;
+				}
+			}
+
 		}
 		txtFacil->Clear();
 	

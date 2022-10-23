@@ -13,8 +13,8 @@ void ListaColor::Add(int item) {
 		tail = Nodo;
 	}
 	else { //Tiene elementos
-		tail->next = Nodo;
-		tail = Nodo;
+		header->next = Nodo;
+		header = Nodo;
 	}
 	count++;
 }
