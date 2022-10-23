@@ -16,9 +16,11 @@ class ListaColor {
 		/// Apuntador hacia siguiente Nodo
 		/// </summary>
 		Node* next;
+		Node () {}
+		~Node (){}
 	};
 
-private:
+
 	/// <summary>
 	/// Apuntador al primer Nodo dentro de la lista (cabeza)
 	/// </summary>
@@ -91,6 +93,6 @@ public:
 	/// <param name="item">Elemento a eliminar</param>
 	/// <returns> Verdadero si el elemento fue removido, Falso si no fue encontrado< / returns>
 	bool Remove(int item);
-	
+	Node* ExtractAtStart();
 };
 
