@@ -66,4 +66,20 @@ int ListaColor::LastValue(int index) {
 	}
 
 }
+void ListaColor::RemoveAt(int index) {
+	Node* temp = header;
+	if (Count() != 0) {
+		if ((Count() == 1) || (index == 0)) {
+			Node* temp = header;
+			if (Count() != 0) {
+				header = header->next;
+				if (Count() == 1) {
+					tail = header;
+				}
+				count--;
+			}
+		}
+	}
+}
+
 

@@ -590,6 +590,8 @@ private: System::Void tiempo_Tick_1(System::Object^ sender, System::EventArgs^ e
 					Lista2->Add(temporal);
 					int w = Lista2->GetItem(0);
 					arregloInt2[0] = w;
+					Lista1->RemoveAt(0);
+					
 					
 				
 			}
@@ -630,6 +632,10 @@ private: System::Void tiempo_Tick_1(System::Object^ sender, System::EventArgs^ e
 		}
 		catch (IO::IOException^ e) {
 			MessageBox::Show("Datos ingresados no admitidos");
+		}
+		arregloInt = gcnew array< Int32 >(Lista1->Count());
+		for (int i = 0; i < Lista1->Count(); i++) {
+			arregloInt[i] = Lista1->GetItem(i);
 		}
 		for (int i = 0; i < arregloInt->Length; i++) {
 
