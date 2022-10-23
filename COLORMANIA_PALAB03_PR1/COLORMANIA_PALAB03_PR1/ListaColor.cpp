@@ -25,31 +25,16 @@ int ListaColor::Count() {
 
 int ListaColor::GetItem(int index) {
 
-	int contador = 0;
-	struct Node* temporal = header;
-
-	while ((temporal) && contador <= index) {
-		if (contador == index) {
-
-			try {
-				if (temporal != nullptr) {
-
-					return temporal->data;
-
-
-				}
-			}
-			catch (int nullptr_t) {
-				return 0;
-			}
-
-
+	if ((index >= 0) && (index < count)) {
+		Node* temp = header;
+		int position = 0;
+		while ((temp) && (position < index)) {
+			temp = temp->next;
+			position++;
 		}
-		temporal = temporal->next;
-		contador++;
+		return temp->data;
 	}
-
-	return 0;
+	return -1;
 }
 
 int ListaColor::LastValue(int index) {
