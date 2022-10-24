@@ -1,5 +1,6 @@
 #pragma once
 #include "Medio.h"
+#include "ListaColor.h"
 namespace COLORMANIAPALAB03PR1 {
 
 	using namespace System;
@@ -43,6 +44,18 @@ namespace COLORMANIAPALAB03PR1 {
 		array<String^>^ arregloMedio2;
 		array<String^>^ arregloMedio3;
 		array<String^>^ arregloMovimiento2;
+		array<Int32>^ arregloInt;
+		array<Int32>^ arregloInt2;
+		array<Int32>^ arregloInt3;
+		array<Int32>^ arregloInt4;
+		ListaColor* Lista1 = new ListaColor();
+		ListaColor* Lista2 = new ListaColor();
+		ListaColor* Lista3 = new ListaColor();
+		ListaColor* Lista4 = new ListaColor();
+		bool verLista1;
+		bool verLista2;
+		bool verLista3;
+		bool verLista4;
 	private: System::Windows::Forms::TextBox^ txtMedio;
 	public:
 	private: System::Windows::Forms::Button^ button2;
@@ -344,82 +357,174 @@ namespace COLORMANIAPALAB03PR1 {
 
 
 				dataGridView2->Rows->Add(7);
-
+				dataGridView2->ClearSelection();
 
 			}
 		}
 	}
 	private: System::Void btnEmpeza_Click(System::Object^ sender, System::EventArgs^ e) {
+		arregloInt = gcnew array< Int32 >(arregloMedio->Length);
 		for (int i = 0; i < arregloMedio->Length; i++) {
+			if (arregloMedio[i] == "M") {
 
-			if (arregloMedio[i]) {
-				if (arregloMedio[i] == "M") {
-					dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Purple;
-				}
-				if (arregloMedio[i] == "V") {
-					dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Green;
-				}
-				if (arregloMedio[i] == "R") {
-					dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Red;
-				}
-				if (arregloMedio[i] == "A") {
-					dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Yellow;
-				}
+				arregloInt[i] = 1;
 			}
-
+			else if (arregloMedio[i] == "V") {
+				arregloInt[i] = 2;
+			}
+			else if (arregloMedio[i] == "R") {
+				arregloInt[i] = 3;
+			}
+			else if (arregloMedio[i] == "A") {
+				arregloInt[i] = 4;
+			}
 		}
+		arregloInt2 = gcnew array< Int32 >(arregloMedio2->Length);
 		for (int i = 0; i < arregloMedio2->Length; i++) {
-			
-			if (arregloMedio2[i]) {
+			if (arregloMedio2[i] == "M") {
 
-
-				if (arregloMedio2[i] == "M") {
-					dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Purple;
-				}
-				if (arregloMedio2[i] == "V") {
-					dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Green;
-				}
-				if (arregloMedio2[i] == "R") {
-					dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Red;
-				}
-				if (arregloMedio2[i] == "A") {
-					dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Yellow;
-				}
+				arregloInt2[i] = 1;
 			}
-
+			else if (arregloMedio2[i] == "V") {
+				arregloInt2[i] = 2;
+			}
+			else if (arregloMedio2[i] == "R") {
+				arregloInt2[i] = 3;
+			}
+			else if (arregloMedio2[i] == "A") {
+				arregloInt2[i] = 4;
+			}
 		}
+		arregloInt3 = gcnew array< Int32 >(arregloMedio3->Length);
 		for (int i = 0; i < arregloMedio3->Length; i++) {
-			if (arregloMedio3[i]) {
-				if (arregloMedio3[i] == "M") {
-					dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Purple;
-				}
-				if (arregloMedio3[i] == "V") {
-					dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Green;
-				}
-				if (arregloMedio3[i] == "R") {
-					dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Red;
-				}
-				if (arregloMedio3[i] == "A") {
-					dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Yellow;
-				}
+			if (arregloMedio3[i] == "M") {
+
+				arregloInt3[i] = 1;
+			}
+			else if (arregloMedio3[i] == "V") {
+				arregloInt3[i] = 2;
+			}
+			else if (arregloMedio3[i] == "R") {
+				arregloInt3[i] = 3;
+			}
+			else if (arregloMedio3[i] == "A") {
+				arregloInt3[i] = 4;
+			}
+		}
+		arregloInt4 = gcnew array< Int32 >(arregloMedio4->Length);
+		for (int i = 0; i < arregloMedio4->Length; i++) {
+			if (arregloMedio4[i] == "M") {
+
+				arregloInt4[i] = 1;
+			}
+			else if (arregloMedio4[i] == "V") {
+				arregloInt4[i] = 2;
+			}
+			else if (arregloMedio4[i] == "R") {
+				arregloInt4[i] = 3;
+			}
+			else if (arregloMedio4[i] == "A") {
+				arregloInt4[i] = 4;
+			}
+		}
+		for (int i = 0; i < arregloInt->Length / 2; i++) {
+			int aux = arregloInt[i];
+			arregloInt[i] = arregloInt[arregloInt->Length - 1 - i];
+			arregloInt[arregloInt->Length - 1 - i] = aux;
+		}
+		for (int i = 0; i < arregloInt2->Length / 2; i++) {
+			int aux = arregloInt2[i];
+			arregloInt2[i] = arregloInt2[arregloInt2->Length - 1 - i];
+			arregloInt2[arregloInt2->Length - 1 - i] = aux;
+		}
+		for (int i = 0; i < arregloInt3->Length / 2; i++) {
+			int aux = arregloInt3[i];
+			arregloInt3[i] = arregloInt3[arregloInt3->Length - 1 - i];
+			arregloInt3[arregloInt3->Length - 1 - i] = aux;
+		}
+		for (int i = 0; i < arregloInt4->Length / 2; i++) {
+			int aux = arregloInt4[i];
+			arregloInt4[i] = arregloInt4[arregloInt4->Length - 1 - i];
+			arregloInt4[arregloInt4->Length - 1 - i] = aux;
+		}
+		for (int i = 0; i < arregloInt->Length; i++) {
+			Lista1->Add(arregloInt[i]);
+		}
+		for (int i = 0; i < arregloInt2->Length; i++) {
+			Lista2->Add(arregloInt2[i]);
+		}
+		for (int i = 0; i < arregloInt3->Length; i++) {
+			Lista3->Add(arregloInt3[i]);
+		}
+		for (int i = 0; i < arregloInt4->Length; i++) {
+			Lista4->Add(arregloInt4[i]);
+		}
+		for (int i = 0; i < Lista1->Count(); i++) {
+
+			dataGridView2->ClearSelection();
+			if (Lista1->GetItem(i) == 1) {
+				dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Purple;
+			}
+			if (Lista1->GetItem(i) == 2) {
+				dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Green;
+			}
+			if (Lista1->GetItem(i) == 3) {
+				dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Red;
+			}
+			if (Lista1->GetItem(i) == 4) {
+				dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Yellow;
+			}
+
+
+		}
+		for (int i = 0; i < Lista2->Count(); i++) {
+
+			if (Lista2->GetItem(i) == 1) {
+				dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Purple;
+			}
+			if (Lista2->GetItem(i) == 2) {
+				dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Green;
+			}
+			if (Lista2->GetItem(i) == 3) {
+				dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Red;
+			}
+			if (Lista2->GetItem(i) == 4) {
+				dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Yellow;
 			}
 
 		}
-		for (int i = 0; i < arregloMedio4->Length; i++) {
-			if (arregloMedio4[i]) {
-				if (arregloMedio4[i] == "M") {
-					dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Purple;
-				}
-				if (arregloMedio4[i] == "V") {
-					dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Green;
-				}
-				if (arregloMedio4[i] == "R") {
-					dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Red;
-				}
-				if (arregloMedio4[i] == "A") {
-					dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Yellow;
-				}
+		for (int i = 0; i < Lista3->Count(); i++) {
+
+			if (Lista3->GetItem(i) == 1) {
+				dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Purple;
 			}
+			if (Lista3->GetItem(i) == 2) {
+				dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Green;
+			}
+			if (Lista3->GetItem(i) == 3) {
+				dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Red;
+			}
+			if (Lista3->GetItem(i) == 4) {
+				dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Yellow;
+			}
+
+
+		}
+		for (int i = 0; i < Lista4->Count(); i++) {
+
+			if (Lista4->GetItem(i) == 1) {
+				dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Purple;
+			}
+			if (Lista4->GetItem(i) == 2) {
+				dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Green;
+			}
+			if (Lista4->GetItem(i) == 3) {
+				dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Red;
+			}
+			if (Lista4->GetItem(i) == 4) {
+				dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Yellow;
+			}
+
 
 		}
 		tiempo->Start();
@@ -444,6 +549,7 @@ private: System::Void tiempo_Tick(System::Object^ sender, System::EventArgs^ e) 
 		Form::AcceptButton;
 		Form::Close();
 	}
+
 }
 private: System::Void Medio_Load(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -461,45 +567,78 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	label1->Text = "Cantidad de movimientos: " + contador;
 	arregloMovimiento2 = txt->Split(separador);
 	listBox1->Items->Add(txtMedio->Text);
-	for (int i = 0; i < arregloMovimiento2->Length; i++) {
-		MessageBox::Show(arregloMovimiento2[i]);
-
-	}
+	
 	try {
 		if (arregloMovimiento2[0] == "P1" && arregloMovimiento2[1] == "P2") {
-			//poner metodo que quite de la pila 1 y agregue en la pila 2
+			int valor = Lista1->GetItem(0);
+			Lista2->Add(valor);
+			Lista1->RemoveAtFirst();
+
 		}
-		if (arregloMovimiento2[0] == "P1" && arregloMovimiento2[1] == "P") {
+		if (arregloMovimiento2[0] == "P1" && arregloMovimiento2[1] == "P3") {
+			int valor = Lista1->GetItem(0);
+			Lista3->Add(valor);
+			Lista1->RemoveAtFirst();
 			//poner metodo que quite de la pila 1 y agregue en la pila 3
 		}
 		if (arregloMovimiento2[0] == "P1" && arregloMovimiento2[1] == "P4") {
+			int valor = Lista1->GetItem(0);
+			Lista4->Add(valor);
+			Lista1->RemoveAtFirst();
 			//poner metodo que quite de la pila 1 y agregue en la pila 4
 		}
 		if (arregloMovimiento2[0] == "P2" && arregloMovimiento2[1] == "P1") {
+			int valor = Lista2->GetItem(0);
+			Lista1->Add(valor);
+			Lista2->RemoveAtFirst();
 			//poner metodo que quite de la pila 2 y agregue en la pila 1
 		}
 		if (arregloMovimiento2[0] == "P2" && arregloMovimiento2[1] == "P3") {
+			int valor = Lista2->GetItem(0);
+			Lista3->Add(valor);
+			Lista2->RemoveAtFirst();
 			//poner metodo que quite de la pila 2 y agregue en la pila 3
 		}
 		if (arregloMovimiento2[0] == "P2" && arregloMovimiento2[1] == "P4") {
+			int valor = Lista2->GetItem(0);
+			Lista4->Add(valor);
+			Lista2->RemoveAtFirst();
 			//poner metodo que quite de la pila 2 y agregue en la pila 4
 		}
 		if (arregloMovimiento2[0] == "P3" && arregloMovimiento2[1] == "P1") {
+			int valor = Lista3->GetItem(0);
+			Lista1->Add(valor);
+			Lista3->RemoveAtFirst();
 			//poner metodo que quite de la pila 3 y agregue en la pila 1
 		}
 		if (arregloMovimiento2[0] == "P3" && arregloMovimiento2[1] == "P2") {
+			int valor = Lista3->GetItem(0);
+			Lista2->Add(valor);
+			Lista3->RemoveAtFirst();
 			//poner metodo que quite de la pila 3 y agregue en la pila 2
 		}
 		if (arregloMovimiento2[0] == "P3" && arregloMovimiento2[1] == "P4") {
+			int valor = Lista3->GetItem(0);
+			Lista4->Add(valor);
+			Lista3->RemoveAtFirst();
 			//poner metodo que quite de la pila 3 y agregue en la pila 4
 		}
 		if (arregloMovimiento2[0] == "P4" && arregloMovimiento2[1] == "P1") {
+			int valor = Lista4->GetItem(0);
+			Lista1->Add(valor);
+			Lista4->RemoveAtFirst();
 			//poner metodo que quite de la pila 4 y agregue en la pila 1
 		}
 		if (arregloMovimiento2[0] == "P4" && arregloMovimiento2[1] == "P2") {
+			int valor = Lista4->GetItem(0);
+			Lista2->Add(valor);
+			Lista4->RemoveAtFirst();
 			//poner metodo que quite de la pila 4 y agregue en la pila 2
 		}
 		if (arregloMovimiento2[0] == "P4" && arregloMovimiento2[1] == "P3") {
+			int valor = Lista4->GetItem(0);
+			Lista3->Add(valor);
+			Lista4->RemoveAtFirst();
 			//poner metodo que quite de la pila 4 y agregue en la pila 3
 		}
 
@@ -507,6 +646,81 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	catch (IO::IOException^ e) {
 		MessageBox::Show("Datos ingresados no admitidos");
 	}
+	
+	dataGridView2->Rows->Clear();
+	dataGridView2->Rows->Add(7);
+	dataGridView2->ClearSelection();
+	for (int i = 0; i < Lista1->Count(); i++) {
+
+
+		if (Lista1->GetItem(i) == 1) {
+			dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Purple;
+		}
+		if (Lista1->GetItem(i) == 2) {
+			dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Green;
+		}
+		if (Lista1->GetItem(i) == 3) {
+			dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Red;
+		}
+		if (Lista1->GetItem(i) == 4) {
+			dataGridView2->Rows[i]->Cells[0]->Style->BackColor = Color::Yellow;
+		}
+
+
+	}
+	for (int i = 0; i < Lista2->Count(); i++) {
+
+		if (Lista2->GetItem(i) == 1) {
+			dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Purple;
+		}
+		if (Lista2->GetItem(i) == 2) {
+			dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Green;
+		}
+		if (Lista2->GetItem(i) == 3) {
+			dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Red;
+		}
+		if (Lista2->GetItem(i) == 4) {
+			dataGridView2->Rows[i]->Cells[1]->Style->BackColor = Color::Yellow;
+		}
+
+	}
+	for (int i = 0; i < Lista3->Count(); i++) {
+
+		if (Lista3->GetItem(i) == 1) {
+			dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Purple;
+		}
+		if (Lista3->GetItem(i) == 2) {
+			dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Green;
+		}
+		if (Lista3->GetItem(i) == 3) {
+			dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Red;
+		}
+		if (Lista3->GetItem(i) == 4) {
+			dataGridView2->Rows[i]->Cells[2]->Style->BackColor = Color::Yellow;
+		}
+
+
+	}
+	for (int i = 0; i < Lista4->Count(); i++) {
+
+		if (Lista4->GetItem(i) == 1) {
+			dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Purple;
+		}
+		if (Lista4->GetItem(i) == 2) {
+			dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Green;
+		}
+		if (Lista4->GetItem(i) == 3) {
+			dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Red;
+		}
+		if (Lista4->GetItem(i) == 4) {
+			dataGridView2->Rows[i]->Cells[3]->Style->BackColor = Color::Yellow;
+		}
+
+
+	}
+
+
+	
 	txtMedio->Clear();
 }
 private: System::Void btnGuardarPartida_Click(System::Object^ sender, System::EventArgs^ e) {

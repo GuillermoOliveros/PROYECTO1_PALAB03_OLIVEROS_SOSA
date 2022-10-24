@@ -26,7 +26,7 @@ class ListaColor {
 	Node* header = nullptr;
 	Node* tail = nullptr;
 	int count = 0;
-
+	bool verificar;
 public:
 	/// <summary>
 	/// Agrega un elemento al FINAL de la lista
