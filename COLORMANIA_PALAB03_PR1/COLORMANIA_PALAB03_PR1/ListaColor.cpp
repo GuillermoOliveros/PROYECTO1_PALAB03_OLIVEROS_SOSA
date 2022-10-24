@@ -61,7 +61,7 @@ bool ListaColor::todosIguales() {
 			return false;
 		}
 
-		for (int i = 0; i < Count()-1; i++) {
+		for (int i = 0; i < Count(); i++) {
 			if (GetItem(0) != GetItem(i)) {
 				return false;
 			}
