@@ -8,6 +8,7 @@
 #include "PilaColor.h"
 
 
+
 namespace COLORMANIAPALAB03PR1 {
 
 	using namespace System;
@@ -165,7 +166,7 @@ namespace COLORMANIAPALAB03PR1 {
 			// btnEmpeza
 			// 
 			this->btnEmpeza->Location = System::Drawing::Point(207, 329);
-			this->btnEmpeza->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnEmpeza->Margin = System::Windows::Forms::Padding(4);
 			this->btnEmpeza->Name = L"btnEmpeza";
 			this->btnEmpeza->Size = System::Drawing::Size(221, 33);
 			this->btnEmpeza->TabIndex = 10;
@@ -202,7 +203,7 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
 			this->pictureBox1->Location = System::Drawing::Point(465, 2);
-			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
 			this->pictureBox1->Size = System::Drawing::Size(76, 68);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
@@ -292,7 +293,7 @@ namespace COLORMANIAPALAB03PR1 {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(157, 44);
 			this->button2->TabIndex = 13;
-			this->button2->Text = L"Ingresar movimiento formato pila ";
+			this->button2->Text = L"Ingresar movimiento formato cola ";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &Facil::button2_Click);
 			// 
@@ -318,7 +319,7 @@ namespace COLORMANIAPALAB03PR1 {
 			// btnGuardarPartida
 			// 
 			this->btnGuardarPartida->Location = System::Drawing::Point(107, 268);
-			this->btnGuardarPartida->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->btnGuardarPartida->Margin = System::Windows::Forms::Padding(4);
 			this->btnGuardarPartida->Name = L"btnGuardarPartida";
 			this->btnGuardarPartida->Size = System::Drawing::Size(256, 28);
 			this->btnGuardarPartida->TabIndex = 16;
@@ -332,7 +333,7 @@ namespace COLORMANIAPALAB03PR1 {
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(157, 47);
 			this->button3->TabIndex = 17;
-			this->button3->Text = L"Ingresar movimiento formato cola";
+			this->button3->Text = L"Ingresar movimiento formato pila";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &Facil::button3_Click);
 			// 
@@ -356,7 +357,7 @@ namespace COLORMANIAPALAB03PR1 {
 			this->Controls->Add(this->minutos);
 			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Facil";
 			this->Text = L"Facil";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -389,10 +390,11 @@ namespace COLORMANIAPALAB03PR1 {
 					char separador = 'X';
 					Arreglopos = lineOfText->Split(separador);
 					
-					for (int i = 0; i < Arreglopos->Length; i++) {
+					for (int i = 0; i < Arreglopos->Length -1; i++) {
 						MessageBox::Show(Arreglopos[i]);
 						
 						arreglo = Arreglopos[0]->Split(',');
+						
 						arreglo2 = Arreglopos[1]->Split(',');
 						arreglo3 = Arreglopos[2]->Split(',');
 						arreglo4 = Arreglopos[3]->Split(',');
@@ -416,8 +418,8 @@ namespace COLORMANIAPALAB03PR1 {
  private: System::Void btnEmpeza_Click_1(System::Object^ sender, System::EventArgs^ e) {
 			   tiempo->Start();
 			   
-			   arregloInt = gcnew array< Int32 >(arreglo->Length);
-			   for (int i = 0; i < arreglo->Length; i++) {
+			   arregloInt = gcnew array< Int32 >(arreglo->Length -1 );
+			   for (int i = 0; i < arreglo->Length-1; i++) {
 				   if (arreglo[i] == "M") {
 
 					   arregloInt[i] = 1;
@@ -432,8 +434,8 @@ namespace COLORMANIAPALAB03PR1 {
 					   arregloInt[i] = 4;
 				   }
 			   }
-			   arregloInt2 = gcnew array< Int32 >(arreglo2->Length);
-			   for (int i = 0; i < arreglo2->Length; i++) {
+			   arregloInt2 = gcnew array< Int32 >(arreglo2->Length -1);
+			   for (int i = 0; i < arreglo2->Length -1; i++) {
 				   if (arreglo2[i] == "M") {
 
 					   arregloInt2[i] = 1;
@@ -448,8 +450,8 @@ namespace COLORMANIAPALAB03PR1 {
 					   arregloInt2[i] = 4;
 				   }
 			   }
-			   arregloInt3 = gcnew array< Int32 >(arreglo3->Length);
-			   for (int i = 0; i < arreglo3->Length; i++) {
+			   arregloInt3 = gcnew array< Int32 >(arreglo3->Length -1);
+			   for (int i = 0; i < arreglo3->Length-1; i++) {
 				   if (arreglo3[i] == "M") {
 
 					   arregloInt3[i] = 1;
@@ -689,10 +691,7 @@ private: System::Void tiempo_Tick_1(System::Object^ sender, System::EventArgs^ e
 		catch (IO::IOException^ e) {
 			MessageBox::Show("Datos ingresados no admitidos");
 		}
-		verLista1 = Lista1->todosIguales();
-		verLista2 = Lista2->todosIguales();
-		verLista3 = Lista3->todosIguales();
-		verLista4 = Lista4->todosIguales();
+		
 		dataGridView1->Rows->Clear();
 		dataGridView1->Rows->Add(7);
 		dataGridView1->ClearSelection();
@@ -766,9 +765,7 @@ private: System::Void tiempo_Tick_1(System::Object^ sender, System::EventArgs^ e
 		}
 		
 		
-		if ((verLista1 == true) && (verLista2 == true) && (verLista3 == true) && (verLista4 == true)) {
-			MessageBox::Show("Ha ganado, FELICIDADES!");
-		}
+		
 		txtFacil->Clear();
 	
 }
@@ -904,10 +901,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	catch (IO::IOException^ e) {
 		MessageBox::Show("Datos ingresados no admitidos");
 	}
-	verLista1 = Lista1->todosIguales();
-	verLista2 = Lista2->todosIguales();
-	verLista3 = Lista3->todosIguales();
-	verLista4 = Lista4->todosIguales();
+	
 	dataGridView1->Rows->Clear();
 	dataGridView1->Rows->Add(7);
 	dataGridView1->ClearSelection();

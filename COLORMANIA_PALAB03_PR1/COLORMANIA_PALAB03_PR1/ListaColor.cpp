@@ -73,33 +73,8 @@ void ListaColor::insertAtEnd(int item) {
 	count++;
 }
 
-bool ListaColor::todosIguales() {
-	
-	Node* temporal1 = header;
-	Node* temporal2 = header->next;
-	if (ListaColor::Count() == 0) {
-		verificar = false;
-	}
-	else if (ListaColor::Count() == 1) {
-		verificar = true;
-	}
-	else {
-		int w = ListaColor::Count() - 1;
-		while (w > 0) {
-			if (temporal1->data == temporal2->data) {
-				verificar = true;
-			}
-			else {
-				verificar = false;
-				break;
-			}
-			temporal1 = temporal1->next;
-			temporal2 = temporal2->next;
-			w--;
-		}
-	}
-	return verificar;
-}
+
+
 
 
 
