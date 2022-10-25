@@ -28,6 +28,7 @@ class ListaColor {
 	int count = 0;
 	bool verificar;
 public:
+	ListaColor();
 	/// <summary>
 	/// Agrega un elemento al FINAL de la lista
 	/// </summary>
@@ -93,5 +94,6 @@ public:
 	/// <returns> Verdadero si el elemento fue removido, Falso si no fue encontrado< / returns>
 	bool Remove(int item);
 	bool todosIguales();
+	void insertAtEnd(int item);
 };
 

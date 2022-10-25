@@ -1,6 +1,11 @@
 #include "ListaColor.h"
 
 //Funcionamiento de los métodos 
+ListaColor::ListaColor() {
+	header = nullptr;
+	tail = nullptr;
+	count = 0;
+}
 
 void ListaColor::Add(int item) {
 
@@ -25,7 +30,7 @@ int ListaColor::Count() {
 
 int ListaColor::GetItem(int index) {
 	int counter = 0;
-	struct Node* temporal = header;
+	Node* temporal = header;
 	while ((temporal) && (counter <= index)) {
 		if (counter == index) {
 			return temporal->data;
@@ -53,6 +58,19 @@ int ListaColor::LastValue(int index) {
 }
 void ListaColor::RemoveAtFirst() {
 	header = header->next;
+}
+void ListaColor::insertAtEnd(int item) {
+	Node* newNode = new Node();
+	newNode->data = item;
+	if (Count() == 0) {
+		header = newNode;
+		tail = newNode;
+	}
+	else if (tail->next == nullptr) {
+		tail->next = newNode;
+		newNode = tail;
+	}
+	count++;
 }
 
 bool ListaColor::todosIguales() {
