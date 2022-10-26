@@ -1,0 +1,6 @@
+ --- PARTIDA GUARDADA CON ÉXITO --- 
+ Dificultad: Fácil 
+Tiempo Ocupado: 00:27
+Cantidad de movimientos: 3
+Movimientos Realizados: System.Windows.Forms.ListBox+ObjectCollection
+Último Mapa: TrueTrueTrueTrue

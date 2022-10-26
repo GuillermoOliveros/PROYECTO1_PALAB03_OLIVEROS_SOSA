@@ -95,5 +95,7 @@ public:
 	bool Remove(int item);
 	
 	void insertAtEnd(int item);
+
+	void Ganador(int item);
 };
 

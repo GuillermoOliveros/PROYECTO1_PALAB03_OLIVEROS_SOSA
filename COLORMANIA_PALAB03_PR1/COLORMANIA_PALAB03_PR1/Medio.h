@@ -733,45 +733,30 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	txtMedio->Clear();
 }
 private: System::Void btnGuardarPartida_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 	if (System::Windows::Forms::DialogResult::OK == saveFileDialog1->ShowDialog())
 	{
-		StreamReader^ InputStream = gcnew StreamReader(saveFileDialog1->FileName);
+		StreamWriter^ InputStream = gcnew StreamWriter(saveFileDialog1->FileName);
 
 		if (InputStream != nullptr)
 		{
-			String^ guardar = saveFileDialog1->FileName;
 
-			StreamWriter^ GuardarPartida = File::CreateText(guardar);
+			InputStream->Write(" --- PARTIDA GUARDADA CON ÉXITO --- " + "\n");
+			InputStream->Write(" Dificultad: Fácil " + "\n");
+			InputStream->Write("Tiempo Ocupado: " + minutos->Text + ":" + segundos->Text + "\n");
+			InputStream->Write( label1->Text + "\n");
+			InputStream->Write("Último movimiento: " + listBox1->Text + "\n");
+			InputStream->Write("Último Mapa: " + Convert::ToInt16(Lista1) + Convert::ToInt16(Lista2) + Convert::ToInt16(Lista3) + Convert::ToInt16(Lista4));
 
-			GuardarPartida->Write(" --- PARTIDA GUARDADA CON ÉXITO --- ");
-			GuardarPartida->Write(" Dificultad: Fácil ");
-			GuardarPartida->Write("Tiempo Ocupado: " + minutos + ":" + segundos);
-			GuardarPartida->Write("Movimientos Oucpados: " + label1);
-			GuardarPartida->Write("Movimientos Realizados: " + listBox1->Text);
-			GuardarPartida->Write("Último Mapa: ");
-
-			GuardarPartida->Flush();
-			GuardarPartida->Close();
+			InputStream->Flush();
+			InputStream->Close();
 
 		}
 
-		else {
 
-			String^ guardar = saveFileDialog1->FileName;
-
-			StreamWriter^ GuardarPartida = File::CreateText(guardar);
-
-			GuardarPartida->Write(" --- PARTIDA GUARDADA CON ÉXITO --- ");
-			GuardarPartida->Write(" Dificultad: Fácil ");
-			GuardarPartida->Write("Tiempo Ocupado: " + minutos + ":" + segundos);
-			GuardarPartida->Write("Movimientos Oucpados: " + label1);
-			GuardarPartida->Write("Movimientos Realizados: " + listBox1->Text);
-			GuardarPartida->Write("Último Mapa: ");
-
-			GuardarPartida->Flush();
-			GuardarPartida->Close();
-		}
 	}
+
+
 }
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	contador++;
@@ -935,6 +920,188 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 	}
 
+	for (int i = 0; i < Lista1->Count(); i++) {
+
+		if (Lista1->GetItem(i) == 1)
+		{
+			for (int i = 0; i < Lista1->Count(); i++) {
+				if (Lista1->GetItem(i) == 1)
+				{
+					verLista1 = true;
+				}
+			}
+
+		}
+
+		else if (Lista1->GetItem(i) == 2)
+		{
+			for (int i = 0; i < Lista1->Count(); i++) {
+				if (Lista1->GetItem(i) == 2)
+				{
+					verLista1 = true;
+				}
+			}
+		}
+
+		else if (Lista1->GetItem(i) == 3)
+		{
+
+			for (int i = 0; i < Lista1->Count(); i++) {
+				if (Lista1->GetItem(i) == 3)
+				{
+					verLista1 = true;
+				}
+			}
+		}
+
+		else if (Lista1->GetItem(i) == 4)
+		{
+			for (int i = 0; i < Lista1->Count(); i++) {
+				if (Lista1->GetItem(i) == 4)
+				{
+					verLista1 = true;
+				}
+			}
+		}
+	}
+	// Lista 2
+	for (int i = 0; i < Lista2->Count(); i++) {
+
+		if (Lista2->GetItem(i) == 1)
+		{
+			for (int i = 0; i < Lista2->Count(); i++) {
+				if (Lista2->GetItem(i) == 1)
+				{
+					verLista2 = true;
+				}
+			}
+		}
+
+		else if (Lista2->GetItem(i) == 2)
+		{
+			for (int i = 0; i < Lista2->Count(); i++) {
+				if (Lista2->GetItem(i) == 2)
+				{
+					verLista2 = true;
+				}
+			}
+		}
+
+		else if (Lista2->GetItem(i) == 3)
+		{
+			for (int i = 0; i < Lista2->Count(); i++) {
+				if (Lista2->GetItem(i) == 3)
+				{
+					verLista2 = true;
+				}
+			}
+		}
+
+		else if (Lista2->GetItem(i) == 4)
+		{
+			for (int i = 0; i < Lista2->Count(); i++) {
+				if (Lista2->GetItem(i) == 4)
+				{
+					verLista2 = true;
+				}
+			}
+		}
+	}
+
+	//Lista 3
+
+	for (int i = 0; i < Lista3->Count(); i++) {
+
+		if (Lista3->GetItem(i) == 1)
+		{
+			for (int i = 0; i < Lista3->Count(); i++) {
+				if (Lista3->GetItem(i) == 1)
+				{
+					verLista3 = true;
+				}
+			}
+		}
+
+
+		else if (Lista3->GetItem(i) == 2)
+		{
+			for (int i = 0; i < Lista3->Count(); i++) {
+				if (Lista3->GetItem(i) == 2)
+				{
+					verLista3 = true;
+				}
+			}
+		}
+
+		else if (Lista3->GetItem(i) == 3)
+		{
+			for (int i = 0; i < Lista3->Count(); i++) {
+				if (Lista3->GetItem(i) == 3)
+				{
+					verLista3 = true;
+				}
+			}
+		}
+
+		else if (Lista3->GetItem(i) == 4)
+		{
+			for (int i = 0; i < Lista3->Count(); i++) {
+				if (Lista3->GetItem(i) == 4)
+				{
+					verLista3 = true;
+				}
+			}
+		}
+	}
+
+
+	// Lista 4
+
+	for (int i = 0; i < Lista4->Count(); i++) {
+
+		if (Lista4->GetItem(i) == 1)
+		{
+			for (int i = 0; i < Lista4->Count(); i++) {
+				if (Lista4->GetItem(i) == 1)
+				{
+					verLista4 = true;
+				}
+			}
+		}
+
+		else if (Lista4->GetItem(i) == 2)
+		{
+			for (int i = 0; i < Lista4->Count(); i++) {
+				if (Lista4->GetItem(i) == 2)
+				{
+					verLista4 = true;
+				}
+			}
+		}
+
+		else if (Lista4->GetItem(i) == 3)
+		{
+			for (int i = 0; i < Lista4->Count(); i++) {
+				if (Lista4->GetItem(i) == 3)
+				{
+					verLista4 = true;
+				}
+			}
+		}
+
+		else if (Lista4->GetItem(i) == 4)
+		{
+			for (int i = 0; i < Lista4->Count(); i++) {
+				if (Lista4->GetItem(i) == 4)
+				{
+					verLista4 = true;
+				}
+			}
+		}
+	}
+	if ((verLista1 == true) && (verLista2 == true) && (verLista3 == true) && (verLista4 == true)) {
+		MessageBox::Show("Ha ganado, FELICIDADES!");
+	}
 
 
 	txtMedio->Clear();
