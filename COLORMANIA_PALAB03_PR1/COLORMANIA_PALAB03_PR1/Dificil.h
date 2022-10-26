@@ -735,7 +735,7 @@ private: System::Void btnGuardarPartida_Click(System::Object^ sender, System::Ev
 			InputStream->Write(" Dificultad: Fácil " + "\n");
 			InputStream->Write("Tiempo Ocupado: " + minutos->Text + ":" + segundos->Text + "\n");
 			InputStream->Write( label1 + "\n");
-			InputStream->Write("Movimientos Realizados: " + listBox1->Text + "\n");
+			InputStream->Write("Último movimiento: " + listBox1->Text + "\n");
 			InputStream->Write("Último Mapa: " + Convert::ToInt16(Lista1) + Convert::ToInt16(Lista2) + Convert::ToInt16(Lista3) + Convert::ToInt16(Lista4) + "\n");
 
 			InputStream->Flush();
