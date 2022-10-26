@@ -56,11 +56,14 @@ namespace COLORMANIAPALAB03PR1 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
 	private: System::Windows::Forms::TextBox^ txtDificil;
 
-	private: System::Windows::Forms::Button^ button2;
+
 	private: System::Windows::Forms::ListBox^ listBox1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Button^ btnGuardarPartida;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button2;
+
 
 		   array<String^>^ Arreglopos3;
 
@@ -78,7 +81,7 @@ namespace COLORMANIAPALAB03PR1 {
 	private: System::Windows::Forms::OpenFileDialog^ openFileDialog3;
 	protected:
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::ListBox^ listBoxPrueba3;
+
 	private: System::ComponentModel::IContainer^ components;
 
 	private:
@@ -98,7 +101,6 @@ namespace COLORMANIAPALAB03PR1 {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Dificil::typeid));
 			this->openFileDialog3 = (gcnew System::Windows::Forms::OpenFileDialog());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->listBoxPrueba3 = (gcnew System::Windows::Forms::ListBox());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->segundos = (gcnew System::Windows::Forms::Label());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
@@ -111,11 +113,12 @@ namespace COLORMANIAPALAB03PR1 {
 			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->txtDificil = (gcnew System::Windows::Forms::TextBox());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btnGuardarPartida = (gcnew System::Windows::Forms::Button());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
 			this->SuspendLayout();
@@ -126,23 +129,14 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(9, 262);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->Location = System::Drawing::Point(12, 322);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(132, 32);
+			this->button1->Size = System::Drawing::Size(176, 39);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Ingresar archivo de texto";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Dificil::button1_Click);
-			// 
-			// listBoxPrueba3
-			// 
-			this->listBoxPrueba3->FormattingEnabled = true;
-			this->listBoxPrueba3->Location = System::Drawing::Point(415, 61);
-			this->listBoxPrueba3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->listBoxPrueba3->Name = L"listBoxPrueba3";
-			this->listBoxPrueba3->Size = System::Drawing::Size(91, 69);
-			this->listBoxPrueba3->TabIndex = 1;
 			// 
 			// label3
 			// 
@@ -150,9 +144,10 @@ namespace COLORMANIAPALAB03PR1 {
 			this->label3->BackColor = System::Drawing::Color::Transparent;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(454, 20);
+			this->label3->Location = System::Drawing::Point(605, 25);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(11, 16);
+			this->label3->Size = System::Drawing::Size(15, 20);
 			this->label3->TabIndex = 13;
 			this->label3->Text = L":";
 			// 
@@ -161,18 +156,20 @@ namespace COLORMANIAPALAB03PR1 {
 			this->segundos->AutoSize = true;
 			this->segundos->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->segundos->Location = System::Drawing::Point(464, 9);
+			this->segundos->Location = System::Drawing::Point(619, 11);
+			this->segundos->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->segundos->Name = L"segundos";
-			this->segundos->Size = System::Drawing::Size(41, 29);
+			this->segundos->Size = System::Drawing::Size(51, 36);
 			this->segundos->TabIndex = 12;
 			this->segundos->Text = L"00";
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(354, 1);
+			this->pictureBox1->Location = System::Drawing::Point(472, 1);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(57, 55);
+			this->pictureBox1->Size = System::Drawing::Size(76, 68);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 11;
 			this->pictureBox1->TabStop = false;
@@ -182,17 +179,19 @@ namespace COLORMANIAPALAB03PR1 {
 			this->minutos->AutoSize = true;
 			this->minutos->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->minutos->Location = System::Drawing::Point(417, 9);
+			this->minutos->Location = System::Drawing::Point(556, 11);
+			this->minutos->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->minutos->Name = L"minutos";
-			this->minutos->Size = System::Drawing::Size(41, 29);
+			this->minutos->Size = System::Drawing::Size(51, 36);
 			this->minutos->TabIndex = 10;
 			this->minutos->Text = L"00";
 			// 
 			// btnEmpeza
 			// 
-			this->btnEmpeza->Location = System::Drawing::Point(146, 262);
+			this->btnEmpeza->Location = System::Drawing::Point(195, 322);
+			this->btnEmpeza->Margin = System::Windows::Forms::Padding(4);
 			this->btnEmpeza->Name = L"btnEmpeza";
-			this->btnEmpeza->Size = System::Drawing::Size(166, 32);
+			this->btnEmpeza->Size = System::Drawing::Size(221, 39);
 			this->btnEmpeza->TabIndex = 15;
 			this->btnEmpeza->Text = L"Empieza!";
 			this->btnEmpeza->UseVisualStyleBackColor = true;
@@ -212,14 +211,14 @@ namespace COLORMANIAPALAB03PR1 {
 				this->Column1,
 					this->Column2, this->Column3, this->Column4
 			});
-			this->dataGridView3->Location = System::Drawing::Point(33, 33);
-			this->dataGridView3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dataGridView3->Location = System::Drawing::Point(44, 41);
+			this->dataGridView3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView3->MultiSelect = false;
 			this->dataGridView3->Name = L"dataGridView3";
 			this->dataGridView3->ReadOnly = true;
 			this->dataGridView3->RowHeadersWidth = 51;
 			this->dataGridView3->RowTemplate->Height = 24;
-			this->dataGridView3->Size = System::Drawing::Size(297, 192);
+			this->dataGridView3->Size = System::Drawing::Size(396, 236);
 			this->dataGridView3->TabIndex = 16;
 			// 
 			// Column1
@@ -256,58 +255,70 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			// txtDificil
 			// 
-			this->txtDificil->Location = System::Drawing::Point(379, 240);
-			this->txtDificil->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->txtDificil->Location = System::Drawing::Point(505, 286);
+			this->txtDificil->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtDificil->Name = L"txtDificil";
-			this->txtDificil->Size = System::Drawing::Size(109, 20);
+			this->txtDificil->Size = System::Drawing::Size(154, 22);
 			this->txtDificil->TabIndex = 17;
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(379, 262);
-			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(108, 32);
-			this->button2->TabIndex = 18;
-			this->button2->Text = L"Ingresar movimiento ";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &Dificil::button2_Click);
 			// 
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->Location = System::Drawing::Point(415, 133);
-			this->listBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->listBox1->ItemHeight = 16;
+			this->listBox1->Location = System::Drawing::Point(553, 73);
+			this->listBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(91, 69);
+			this->listBox1->Size = System::Drawing::Size(120, 84);
 			this->listBox1->TabIndex = 19;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(352, 212);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(487, 173);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(128, 13);
+			this->label1->Size = System::Drawing::Size(162, 16);
 			this->label1->TabIndex = 20;
 			this->label1->Text = L"Cantidad de movimientos:";
 			// 
 			// btnGuardarPartida
 			// 
-			this->btnGuardarPartida->Location = System::Drawing::Point(71, 230);
+			this->btnGuardarPartida->Location = System::Drawing::Point(95, 283);
+			this->btnGuardarPartida->Margin = System::Windows::Forms::Padding(4);
 			this->btnGuardarPartida->Name = L"btnGuardarPartida";
-			this->btnGuardarPartida->Size = System::Drawing::Size(192, 23);
+			this->btnGuardarPartida->Size = System::Drawing::Size(256, 28);
 			this->btnGuardarPartida->TabIndex = 21;
 			this->btnGuardarPartida->Text = L"Guardar Partida";
 			this->btnGuardarPartida->UseVisualStyleBackColor = true;
 			this->btnGuardarPartida->Click += gcnew System::EventHandler(this, &Dificil::btnGuardarPartida_Click);
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(505, 315);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(154, 46);
+			this->button3->TabIndex = 22;
+			this->button3->Text = L"Ingresar movimiento en formato cola";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Dificil::button3_Click);
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(505, 231);
+			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(154, 46);
+			this->button2->TabIndex = 18;
+			this->button2->Text = L"Ingresar movimiento en formato pila";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Dificil::button2_Click);
+			// 
 			// Dificil
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::DarkRed;
-			this->ClientSize = System::Drawing::Size(514, 304);
+			this->ClientSize = System::Drawing::Size(685, 374);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->btnGuardarPartida);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->listBox1);
@@ -319,9 +330,9 @@ namespace COLORMANIAPALAB03PR1 {
 			this->Controls->Add(this->segundos);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->minutos);
-			this->Controls->Add(this->listBoxPrueba3);
 			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Dificil";
 			this->Text = L"Dificil";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -342,7 +353,7 @@ namespace COLORMANIAPALAB03PR1 {
 					Arreglopos3 = lineOfText->Split(separador);
 					for (int i = 0; i < Arreglopos3->Length; i++) {
 						MessageBox::Show(Arreglopos3[i]);
-						listBoxPrueba3->Items->Add(Arreglopos3[i]);
+						
 						arregloDificil = Arreglopos3[0]->Split(',');
 						arregloDificil2 = Arreglopos3[1]->Split(',');
 						arregloDificil3 = Arreglopos3[2]->Split(',');
@@ -360,8 +371,8 @@ namespace COLORMANIAPALAB03PR1 {
 
 	}
 	private: System::Void btnEmpeza_Click(System::Object^ sender, System::EventArgs^ e) {
-		arregloInt = gcnew array< Int32 >(arregloDificil->Length);
-		for (int i = 0; i < arregloDificil->Length; i++) {
+		arregloInt = gcnew array< Int32 >(arregloDificil->Length-1);
+		for (int i = 0; i < arregloDificil->Length-1; i++) {
 			if (arregloDificil[i] == "M") {
 
 				arregloInt[i] = 1;
@@ -376,8 +387,8 @@ namespace COLORMANIAPALAB03PR1 {
 				arregloInt[i] = 4;
 			}
 		}
-		arregloInt2 = gcnew array< Int32 >(arregloDificil2->Length);
-		for (int i = 0; i < arregloDificil2->Length; i++) {
+		arregloInt2 = gcnew array< Int32 >(arregloDificil2->Length-1);
+		for (int i = 0; i < arregloDificil2->Length-1; i++) {
 			if (arregloDificil2[i] == "M") {
 
 				arregloInt2[i] = 1;
@@ -392,8 +403,8 @@ namespace COLORMANIAPALAB03PR1 {
 				arregloInt2[i] = 4;
 			}
 		}
-		arregloInt3 = gcnew array< Int32 >(arregloDificil3->Length);
-		for (int i = 0; i < arregloDificil3->Length; i++) {
+		arregloInt3 = gcnew array< Int32 >(arregloDificil3->Length-1);
+		for (int i = 0; i < arregloDificil3->Length-1; i++) {
 			if (arregloDificil3[i] == "M") {
 
 				arregloInt3[i] = 1;
@@ -752,6 +763,172 @@ private: System::Void btnGuardarPartida_Click(System::Object^ sender, System::Ev
 			GuardarPartida->Close();
 		}
 	}
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	contador++;
+	int temporal;
+	char separador = ',';
+	String^ txt;
+	txt = txtDificil->Text;
+	listBox1->Items->Add(txtDificil);
+	label1->Text = "Cantidad de movimientos: " + contador;
+	arregloMovimiento3 = txt->Split(separador);
+	listBox1->Items->Add(txtDificil->Text);
+
+	try {
+		if (arregloMovimiento3[0] == "P1" && arregloMovimiento3[1] == "P2") {
+			int valor = Lista1->GetItem(0);
+			Lista2->insertAtEnd(valor);
+			Lista1->RemoveAtFirst();
+
+		}
+		if (arregloMovimiento3[0] == "P1" && arregloMovimiento3[1] == "P3") {
+			int valor = Lista1->GetItem(0);
+			Lista3->insertAtEnd(valor);
+			Lista1->RemoveAtFirst();
+			//poner metodo que quite de la pila 1 y agregue en la pila 3
+		}
+		if (arregloMovimiento3[0] == "P1" && arregloMovimiento3[1] == "P4") {
+			int valor = Lista1->GetItem(0);
+			Lista4->insertAtEnd(valor);
+			Lista1->RemoveAtFirst();
+			//poner metodo que quite de la pila 1 y agregue en la pila 4
+		}
+		if (arregloMovimiento3[0] == "P2" && arregloMovimiento3[1] == "P1") {
+			int valor = Lista2->GetItem(0);
+			Lista1->insertAtEnd(valor);
+			Lista2->RemoveAtFirst();
+			//poner metodo que quite de la pila 2 y agregue en la pila 1
+		}
+		if (arregloMovimiento3[0] == "P2" && arregloMovimiento3[1] == "P3") {
+			int valor = Lista2->GetItem(0);
+			Lista3->insertAtEnd(valor);
+			Lista2->RemoveAtFirst();
+			//poner metodo que quite de la pila 2 y agregue en la pila 3
+		}
+		if (arregloMovimiento3[0] == "P2" && arregloMovimiento3[1] == "P4") {
+			int valor = Lista2->GetItem(0);
+			Lista4->insertAtEnd(valor);
+			Lista2->RemoveAtFirst();
+			//poner metodo que quite de la pila 2 y agregue en la pila 4
+		}
+		if (arregloMovimiento3[0] == "P3" && arregloMovimiento3[1] == "P1") {
+			int valor = Lista3->GetItem(0);
+			Lista1->insertAtEnd(valor);
+			Lista3->RemoveAtFirst();
+			//poner metodo que quite de la pila 3 y agregue en la pila 1
+		}
+		if (arregloMovimiento3[0] == "P3" && arregloMovimiento3[1] == "P2") {
+			int valor = Lista3->GetItem(0);
+			Lista2->insertAtEnd(valor);
+			Lista3->RemoveAtFirst();
+			//poner metodo que quite de la pila 3 y agregue en la pila 2
+		}
+		if (arregloMovimiento3[0] == "P3" && arregloMovimiento3[1] == "P4") {
+			int valor = Lista3->GetItem(0);
+			Lista4->insertAtEnd(valor);
+			Lista3->RemoveAtFirst();
+			//poner metodo que quite de la pila 3 y agregue en la pila 4
+		}
+		if (arregloMovimiento3[0] == "P4" && arregloMovimiento3[1] == "P1") {
+			int valor = Lista4->GetItem(0);
+			Lista1->insertAtEnd(valor);
+			Lista4->RemoveAtFirst();
+			//poner metodo que quite de la pila 4 y agregue en la pila 1
+		}
+		if (arregloMovimiento3[0] == "P4" && arregloMovimiento3[1] == "P2") {
+			int valor = Lista4->GetItem(0);
+			Lista2->insertAtEnd(valor);
+			Lista4->RemoveAtFirst();
+			//poner metodo que quite de la pila 4 y agregue en la pila 2
+		}
+		if (arregloMovimiento3[0] == "P4" && arregloMovimiento3[1] == "P3") {
+			int valor = Lista4->GetItem(0);
+			Lista3->insertAtEnd(valor);
+			Lista4->RemoveAtFirst();
+			//poner metodo que quite de la pila 4 y agregue en la pila 3
+		}
+
+	}
+	catch (IO::IOException^ e) {
+		MessageBox::Show("Datos ingresados no admitidos");
+	}
+
+	dataGridView3->Rows->Clear();
+	dataGridView3->Rows->Add(7);
+	dataGridView3->ClearSelection();
+	for (int i = 0; i < Lista1->Count(); i++) {
+
+
+		if (Lista1->GetItem(i) == 1) {
+			dataGridView3->Rows[i]->Cells[0]->Style->BackColor = Color::Purple;
+		}
+		if (Lista1->GetItem(i) == 2) {
+			dataGridView3->Rows[i]->Cells[0]->Style->BackColor = Color::Green;
+		}
+		if (Lista1->GetItem(i) == 3) {
+			dataGridView3->Rows[i]->Cells[0]->Style->BackColor = Color::Red;
+		}
+		if (Lista1->GetItem(i) == 4) {
+			dataGridView3->Rows[i]->Cells[0]->Style->BackColor = Color::Yellow;
+		}
+
+
+	}
+	for (int i = 0; i < Lista2->Count(); i++) {
+
+		if (Lista2->GetItem(i) == 1) {
+			dataGridView3->Rows[i]->Cells[1]->Style->BackColor = Color::Purple;
+		}
+		if (Lista2->GetItem(i) == 2) {
+			dataGridView3->Rows[i]->Cells[1]->Style->BackColor = Color::Green;
+		}
+		if (Lista2->GetItem(i) == 3) {
+			dataGridView3->Rows[i]->Cells[1]->Style->BackColor = Color::Red;
+		}
+		if (Lista2->GetItem(i) == 4) {
+			dataGridView3->Rows[i]->Cells[1]->Style->BackColor = Color::Yellow;
+		}
+
+	}
+	for (int i = 0; i < Lista3->Count(); i++) {
+
+		if (Lista3->GetItem(i) == 1) {
+			dataGridView3->Rows[i]->Cells[2]->Style->BackColor = Color::Purple;
+		}
+		if (Lista3->GetItem(i) == 2) {
+			dataGridView3->Rows[i]->Cells[2]->Style->BackColor = Color::Green;
+		}
+		if (Lista3->GetItem(i) == 3) {
+			dataGridView3->Rows[i]->Cells[2]->Style->BackColor = Color::Red;
+		}
+		if (Lista3->GetItem(i) == 4) {
+			dataGridView3->Rows[i]->Cells[2]->Style->BackColor = Color::Yellow;
+		}
+
+
+	}
+	for (int i = 0; i < Lista4->Count(); i++) {
+
+		if (Lista4->GetItem(i) == 1) {
+			dataGridView3->Rows[i]->Cells[3]->Style->BackColor = Color::Purple;
+		}
+		if (Lista4->GetItem(i) == 2) {
+			dataGridView3->Rows[i]->Cells[3]->Style->BackColor = Color::Green;
+		}
+		if (Lista4->GetItem(i) == 3) {
+			dataGridView3->Rows[i]->Cells[3]->Style->BackColor = Color::Red;
+		}
+		if (Lista4->GetItem(i) == 4) {
+			dataGridView3->Rows[i]->Cells[3]->Style->BackColor = Color::Yellow;
+		}
+
+
+	}
+
+
+
+	txtDificil->Clear();
 }
 };
 }

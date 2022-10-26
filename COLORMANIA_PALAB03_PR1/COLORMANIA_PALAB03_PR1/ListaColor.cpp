@@ -66,7 +66,7 @@ void ListaColor::insertAtEnd(int item) {
 		header = newNode;
 		tail = newNode;
 	}
-	else if (tail->next == nullptr) {
+	else {
 		tail->next = newNode;
 		newNode = tail;
 	}
