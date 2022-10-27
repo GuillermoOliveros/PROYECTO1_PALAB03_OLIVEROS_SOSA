@@ -93,7 +93,7 @@ public:
 	/// <param name="item">Elemento a eliminar</param>
 	/// <returns> Verdadero si el elemento fue removido, Falso si no fue encontrado< / returns>
 	bool Remove(int item);
-	
+	bool verificarGanador();
 	void insertAtEnd(int item);
 
 	void Ganador(int item);

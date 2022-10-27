@@ -6,6 +6,7 @@ ListaColor::ListaColor() {
 	tail = nullptr;
 	count = 0;
 }
+bool verificar;
 
 void ListaColor::Add(int item) {
 
@@ -71,6 +72,32 @@ void ListaColor::insertAtEnd(int item) {
 		newNode = tail;
 	}
 	count++;
+}
+bool ListaColor::verificarGanador() {
+	Node* temporal1 = header;
+	Node* temporal2 = header->next;
+	if (ListaColor::Count() == 0) {
+		verificar = false;
+	}
+	else if (ListaColor::Count() == 1) {
+		verificar =  true;
+	}
+	else {
+		int contador = ListaColor::Count();
+		while (contador > 0) {
+			if (temporal1->data == temporal2->data) {
+				verificar =  true;
+			}
+			else {
+				verificar = false;
+				break;
+			}
+			temporal1 = temporal1->next;
+			temporal2 = temporal2->next;
+			contador--;
+		}
+	}
+	return verificar;
 }
 
 

@@ -73,6 +73,7 @@ namespace COLORMANIAPALAB03PR1 {
 	private: System::Windows::Forms::Button^ btnGuardarPartida;
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog1;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
 
 
 
@@ -145,16 +146,17 @@ namespace COLORMANIAPALAB03PR1 {
 			this->btnGuardarPartida = (gcnew System::Windows::Forms::Button());
 			this->saveFileDialog1 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(17, 267);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
+			this->button1->Location = System::Drawing::Point(23, 329);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(133, 27);
+			this->button1->Size = System::Drawing::Size(177, 33);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Ingresar archivo de texto ";
 			this->button1->UseVisualStyleBackColor = true;
@@ -166,9 +168,10 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			// btnEmpeza
 			// 
-			this->btnEmpeza->Location = System::Drawing::Point(155, 267);
+			this->btnEmpeza->Location = System::Drawing::Point(207, 329);
+			this->btnEmpeza->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnEmpeza->Name = L"btnEmpeza";
-			this->btnEmpeza->Size = System::Drawing::Size(166, 27);
+			this->btnEmpeza->Size = System::Drawing::Size(221, 33);
 			this->btnEmpeza->TabIndex = 10;
 			this->btnEmpeza->Text = L"Empieza!";
 			this->btnEmpeza->UseVisualStyleBackColor = true;
@@ -180,9 +183,10 @@ namespace COLORMANIAPALAB03PR1 {
 			this->label3->BackColor = System::Drawing::Color::Transparent;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(449, 21);
+			this->label3->Location = System::Drawing::Point(599, 26);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(11, 16);
+			this->label3->Size = System::Drawing::Size(15, 20);
 			this->label3->TabIndex = 9;
 			this->label3->Text = L":";
 			// 
@@ -191,18 +195,20 @@ namespace COLORMANIAPALAB03PR1 {
 			this->segundos->AutoSize = true;
 			this->segundos->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->segundos->Location = System::Drawing::Point(459, 10);
+			this->segundos->Location = System::Drawing::Point(612, 12);
+			this->segundos->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->segundos->Name = L"segundos";
-			this->segundos->Size = System::Drawing::Size(41, 29);
+			this->segundos->Size = System::Drawing::Size(51, 36);
 			this->segundos->TabIndex = 8;
 			this->segundos->Text = L"00";
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(349, 2);
+			this->pictureBox1->Location = System::Drawing::Point(465, 2);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(57, 55);
+			this->pictureBox1->Size = System::Drawing::Size(76, 68);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 7;
 			this->pictureBox1->TabStop = false;
@@ -212,9 +218,10 @@ namespace COLORMANIAPALAB03PR1 {
 			this->minutos->AutoSize = true;
 			this->minutos->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->minutos->Location = System::Drawing::Point(412, 10);
+			this->minutos->Location = System::Drawing::Point(549, 12);
+			this->minutos->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->minutos->Name = L"minutos";
-			this->minutos->Size = System::Drawing::Size(41, 29);
+			this->minutos->Size = System::Drawing::Size(51, 36);
 			this->minutos->TabIndex = 6;
 			this->minutos->Text = L"00";
 			// 
@@ -232,14 +239,14 @@ namespace COLORMANIAPALAB03PR1 {
 				this->Column1,
 					this->Column2, this->Column3, this->Column4
 			});
-			this->dataGridView1->Location = System::Drawing::Point(35, 21);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
+			this->dataGridView1->Location = System::Drawing::Point(47, 26);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView1->MultiSelect = false;
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(297, 192);
+			this->dataGridView1->Size = System::Drawing::Size(396, 236);
 			this->dataGridView1->TabIndex = 11;
 			// 
 			// Column1
@@ -276,18 +283,18 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			// txtFacil
 			// 
-			this->txtFacil->Location = System::Drawing::Point(372, 236);
-			this->txtFacil->Margin = System::Windows::Forms::Padding(2);
+			this->txtFacil->Location = System::Drawing::Point(496, 290);
+			this->txtFacil->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->txtFacil->Name = L"txtFacil";
-			this->txtFacil->Size = System::Drawing::Size(119, 20);
+			this->txtFacil->Size = System::Drawing::Size(157, 22);
 			this->txtFacil->TabIndex = 12;
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(372, 262);
-			this->button2->Margin = System::Windows::Forms::Padding(2);
+			this->button2->Location = System::Drawing::Point(496, 322);
+			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(118, 36);
+			this->button2->Size = System::Drawing::Size(157, 44);
 			this->button2->TabIndex = 13;
 			this->button2->Text = L"Ingresar movimiento formato cola ";
 			this->button2->UseVisualStyleBackColor = true;
@@ -296,27 +303,28 @@ namespace COLORMANIAPALAB03PR1 {
 			// listBox1
 			// 
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->Location = System::Drawing::Point(415, 58);
-			this->listBox1->Margin = System::Windows::Forms::Padding(2);
+			this->listBox1->ItemHeight = 16;
+			this->listBox1->Location = System::Drawing::Point(553, 71);
+			this->listBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(91, 69);
+			this->listBox1->Size = System::Drawing::Size(120, 84);
 			this->listBox1->TabIndex = 14;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(359, 151);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(479, 186);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(131, 13);
+			this->label1->Size = System::Drawing::Size(165, 16);
 			this->label1->TabIndex = 15;
 			this->label1->Text = L"Cantidad de movimientos: ";
 			// 
 			// btnGuardarPartida
 			// 
-			this->btnGuardarPartida->Location = System::Drawing::Point(80, 218);
+			this->btnGuardarPartida->Location = System::Drawing::Point(107, 268);
+			this->btnGuardarPartida->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnGuardarPartida->Name = L"btnGuardarPartida";
-			this->btnGuardarPartida->Size = System::Drawing::Size(192, 23);
+			this->btnGuardarPartida->Size = System::Drawing::Size(256, 28);
 			this->btnGuardarPartida->TabIndex = 16;
 			this->btnGuardarPartida->Text = L"Guardar Partida";
 			this->btnGuardarPartida->UseVisualStyleBackColor = true;
@@ -324,21 +332,32 @@ namespace COLORMANIAPALAB03PR1 {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(372, 186);
-			this->button3->Margin = System::Windows::Forms::Padding(2);
+			this->button3->Location = System::Drawing::Point(496, 229);
+			this->button3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(118, 38);
+			this->button3->Size = System::Drawing::Size(157, 47);
 			this->button3->TabIndex = 17;
 			this->button3->Text = L"Ingresar movimiento formato pila";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &Facil::button3_Click);
 			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(465, 106);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(75, 23);
+			this->button4->TabIndex = 18;
+			this->button4->Text = L"button4";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Facil::button4_Click);
+			// 
 			// Facil
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::LightGreen;
-			this->ClientSize = System::Drawing::Size(514, 304);
+			this->ClientSize = System::Drawing::Size(685, 374);
+			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->btnGuardarPartida);
 			this->Controls->Add(this->label1);
@@ -353,6 +372,7 @@ namespace COLORMANIAPALAB03PR1 {
 			this->Controls->Add(this->minutos);
 			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"Facil";
 			this->Text = L"Facil";
 			this->Load += gcnew System::EventHandler(this, &Facil::Facil_Load);
@@ -952,192 +972,21 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 
 	}
 
-	for (int i = 0; i < Lista1->Count(); i++) {
-
-		if (Lista1->GetItem(i) == 1)
-		{
-			for (int i = 0; i < Lista1->Count(); i++) {
-				if (Lista1->GetItem(i) == 1)
-				{
-					verLista1 = true;
-				}
-			}
-			
-		}
-		
-		else if (Lista1->GetItem(i) == 2)
-		{
-			for (int i = 0; i < Lista1->Count(); i++) {
-				if (Lista1->GetItem(i) == 2)
-				{
-					verLista1 = true;
-				}
-			}
-		}
-
-		else if (Lista1->GetItem(i) == 3)
-		{
-
-			for (int i = 0; i < Lista1->Count(); i++) {
-				if (Lista1->GetItem(i) == 3)
-				{
-					verLista1 = true;
-				}
-			}
-		}
-
-		else if (Lista1->GetItem(i) == 4)
-		{
-			for (int i = 0; i < Lista1->Count(); i++) {
-				if (Lista1->GetItem(i) == 4)
-				{
-					verLista1 = true;
-				}
-			}
-		}
-	}
-	// Lista 2
-	for (int i = 0; i < Lista2->Count(); i++) {
-
-		if (Lista2->GetItem(i) == 1)
-		{
-			for (int i = 0; i < Lista2->Count(); i++) {
-				if (Lista2->GetItem(i) == 1)
-				{
-					verLista2 = true;
-				}
-			}
-		}
-
-		else if (Lista2->GetItem(i) == 2)
-		{
-			for (int i = 0; i < Lista2->Count(); i++) {
-				if (Lista2->GetItem(i) == 2)
-				{
-					verLista2 = true;
-				}
-			}
-		}
-
-		else if (Lista2->GetItem(i) == 3)
-		{
-			for (int i = 0; i < Lista2->Count(); i++) {
-				if (Lista2->GetItem(i) == 3)
-				{
-					verLista2 = true;
-				}
-			}
-		}
-
-		else if (Lista2->GetItem(i) == 4)
-		{
-			for (int i = 0; i < Lista2->Count(); i++) {
-				if (Lista2->GetItem(i) == 4)
-				{
-					verLista2 = true;
-				}
-			}
-		}
-	}
-
-	//Lista 3
-
-	for (int i = 0; i < Lista3->Count(); i++) {
-
-		if (Lista3->GetItem(i) == 1)
-		{
-			for (int i = 0; i < Lista3->Count(); i++) {
-				if (Lista3->GetItem(i) == 1)
-				{
-					verLista3 = true;
-				}
-			}
-		}
-
-
-		else if (Lista3->GetItem(i) == 2)
-		{
-			for (int i = 0; i < Lista3->Count(); i++) {
-				if (Lista3->GetItem(i) == 2)
-				{
-					verLista3 = true;
-				}
-			}
-		}
-
-		else if (Lista3->GetItem(i) == 3)
-		{
-			for (int i = 0; i < Lista3->Count(); i++) {
-				if (Lista3->GetItem(i) == 3)
-				{
-					verLista3 = true;
-				}
-			}
-		}
-
-		else if (Lista3->GetItem(i) == 4)
-		{
-			for (int i = 0; i < Lista3->Count(); i++) {
-				if (Lista3->GetItem(i) == 4)
-				{
-					verLista3 = true;
-				}
-			}
-		}
-	}
-
-
-	// Lista 4
-
-	for (int i = 0; i < Lista4->Count(); i++) {
-
-		if (Lista4->GetItem(i) == 1)
-		{
-			for (int i = 0; i < Lista4->Count(); i++) {
-				if (Lista4->GetItem(i) == 1)
-				{
-					verLista4 = true;
-				}
-			}
-		}
-
-		else if (Lista4->GetItem(i) == 2)
-		{
-			for (int i = 0; i < Lista4->Count(); i++) {
-				if (Lista4->GetItem(i) == 2)
-				{
-					verLista4 = true;
-				}
-			}
-		}
-
-		else if (Lista4->GetItem(i) == 3)
-		{
-			for (int i = 0; i < Lista4->Count(); i++) {
-				if (Lista4->GetItem(i) == 3)
-				{
-					verLista4 = true;
-				}
-			}
-		}
-
-		else if (Lista4->GetItem(i) == 4)
-		{
-			for (int i = 0; i < Lista4->Count(); i++) {
-				if (Lista4->GetItem(i) == 4)
-				{
-					verLista4 = true;
-				}
-			}
-		}
-	}
-	if ((verLista1 == true) && (verLista2 == true) && (verLista3 == true) && (verLista4 == true)) {
-		MessageBox::Show("Ha ganado, FELICIDADES!");
-	}
+	
 	txtFacil->Clear();
 }
 
 private: System::Void Facil_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	verLista1 = Lista1->verificarGanador();
+	verLista2 = Lista2->verificarGanador();
+	verLista3 = Lista3->verificarGanador();
+	verLista4 = Lista4->verificarGanador();
+	if ((verLista1 == true) && (verLista2 == true) && (verLista3 == true) && (verLista4 == true)) {
+		MessageBox::Show("Ha ganado, FELICIDADES!");
+		Facil::Close();
+	}
 }
 };
 }
